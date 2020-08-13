@@ -6,7 +6,7 @@
 #    By: rixt <marvin@codam.nl>                       +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/09 16:21:14 by rixt          #+#    #+#                  #
-#    Updated: 2020/08/11 22:45:25 by rixt          ########   odam.nl          #
+#    Updated: 2020/08/13 14:48:00 by rde-vrie      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ FLAGS = -Wall -Werror -Wextra -std=c++98
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(SRC) ClassContact.hpp
 	$(CC) $(SRC) $(FLAGS) -o $(NAME)
 
 fclean:
