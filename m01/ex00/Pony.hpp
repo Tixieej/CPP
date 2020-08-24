@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 14:44:30 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/08/24 14:51:06 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/08/24 14:54:52 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ class Pony
 	public:
 		Pony(void);
 		~Pony(void);
+		void			ponyOnTheHeap(void);
+		void			ponyOnTheStack(void);
 	private:
-		int			height_cm;
-		std::string	race;
-		std::string	colour;
+		int				height_cm;
+		std::string		race;
+		std::string		colour;
 };
 
 #endif
