@@ -1,31 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Pony.cpp                                           :+:    :+:            */
+/*   Account.class.cpp                                  :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
+/*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/24 14:41:05 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/08/24 22:52:08 by rixt          ########   odam.nl         */
+/*   Created: 2020/08/13 17:43:22 by rixt          #+#    #+#                 */
+/*   Updated: 2020/08/18 16:15:05 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-Pony::Pony(void)
-{
-	return;
-}
+#include <Account.class.hpp>
 
-Pony::~Pony(void)
-{
-	return;
-}
-
-void	Pony::ponyOnTheHeap(void)
-{
-	Pony *Heap = new Pony();
-}
-
-void	Pony::ponyOnTheStack(void)
-{
-	Pony Stack = Pony();
-}
