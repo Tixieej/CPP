@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 14:44:30 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/08/24 22:52:19 by rixt          ########   odam.nl         */
+/*   Updated: 2020/08/25 13:30:18 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Pony
 		int				height_cm;
 		std::string		race;
 		std::string		colour;
+		std::string		status;
 };
 
 #endif
