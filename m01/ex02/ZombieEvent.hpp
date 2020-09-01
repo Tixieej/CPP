@@ -1,33 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Pony.hpp                                           :+:    :+:            */
+/*   ZombieEvent.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/24 14:44:30 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/09/01 14:06:44 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/09/01 14:27:14 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/09/01 14:27:24 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_H
-# define PONY_H
-# include <string>
-
-class Pony
-{
-	public:
-		Pony(std::string name, int height);
-		~Pony(void);
-		void			feed();
-		void			run(int laps);
-	private:
-		int				height_cm,
-						energy;
-		std::string		name,
-						race,
-						colour;
-
-};
-
-#endif
+//see the class file

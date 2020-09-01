@@ -1,33 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Pony.hpp                                           :+:    :+:            */
+/*   Zombie.hpp                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/24 14:44:30 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/09/01 14:06:44 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/09/01 14:26:09 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/09/01 14:26:25 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PONY_H
-# define PONY_H
-# include <string>
-
-class Pony
-{
-	public:
-		Pony(std::string name, int height);
-		~Pony(void);
-		void			feed();
-		void			run(int laps);
-	private:
-		int				height_cm,
-						energy;
-		std::string		name,
-						race,
-						colour;
-
-};
-
-#endif
+//zombie header
+//Make it contain a type, and a name (at least), and addanannounce()member function, that will output something along the lines of:<name (type)> Braiiiiiiinnnssss...Whatever you want, really, as long as you output the name and type of theZombie.

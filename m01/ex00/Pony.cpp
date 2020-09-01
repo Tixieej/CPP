@@ -6,36 +6,56 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/08/24 14:41:05 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/08/25 13:32:02 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/09/01 13:50:21 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-Pony::Pony(void)
+#include <string>
+#include <iostream>
+#include "Pony.hpp"
+
+Pony::Pony(std::string name, int height)
 {
+	this->name = name;
+	this->height_cm = height;
+	this->energy = 10;
+	std::cout << "New pony, " << name << ", is ";
+	std::cout << height << " cm tall" << std::endl;
 	return;
 }
 
 Pony::~Pony(void)
 {
+	std::cout << "Pony " << this->name << " has died" << std::endl;
 	return;
 }
 
-void	Pony::ponyOnTheHeap(void)
+void		Pony::run(int laps)
 {
-	Pony *Heap = new Pony();
-	
-	for (int i = 0; i < 6; i++)
+	std::cout << this->name << " is going to run " << laps << " laps" << std::endl;
+	for (int i = 1; i <= laps; i++)
 	{
-		std::cout << "Heap has run " << i << "laps\n";
-		std
+		if (energy >= 1)
+		{
+			if (i == 1)
+				std::cout << this->name << " has run " << i << " lap" << std::endl;
+			else
+				std::cout << this->name << " has run " << i << " laps" << std::endl;
+			energy--;
+		}
+		else
+		{
+			std::cout << "Pony " << this->name << " is too tired to run" << std::endl;
+			break;
+		}
 	}
-			//laat pony rondjes rennen
-			//pony heeft honger (status)
-			//pony word gevoerd
-			//pony heeft geen honger meer
+	std::cout << this->name << " goes back to the barn" << std::endl;
 }
 
-void	Pony::ponyOnTheStack(void)
+
+void		Pony::feed()
 {
-	Pony Stack = Pony();
+	std::cout << this->name << " is being fed" << std::endl;
+	this->energy += 10;
+	std::cout << this->name << "'s energy = " << this->energy << std::endl;
 }

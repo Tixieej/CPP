@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   main.cpp                                           :+:    :+:            */
+/*   ex01.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/08/24 14:38:07 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/09/01 13:48:39 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/09/01 14:04:31 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/09/01 14:24:41 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
 #include <iostream>
-#include "Pony.hpp"
 
-void	ponyOnTheHeap(std::string name, int height)
+void	memoryLeak()
 {
-	Pony *heap = new Pony(name, height);
-	heap->run(8);
-	heap->feed();
-	heap->run(19);
-	delete heap;
-}
+	std::string*	panther = new std::string("String panther");
 
-void	ponyOnTheStack(std::string name, int height)
-{
-	Pony stack(name, height);
-	stack.run(16);
-	stack.feed();
-	stack.run(3);
+	std::cout << *panther << std::endl;
+	delete panther;
 }
 
 int		main(void)
 {
-	std::cout << "No ponies were harmed in the making of this code" << std::endl;
-	ponyOnTheHeap("Heap", 140);
-	ponyOnTheStack("Stack", 130);
-
-	return (0);
+	for (int i = 0; i < 15; i++)
+		memoryLeak();
+	while(1);
 }
