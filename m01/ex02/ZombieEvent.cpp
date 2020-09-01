@@ -6,12 +6,14 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 14:26:37 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/09/01 14:47:43 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/09/01 23:03:25 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
+#include <iostream>
 #include "ZombieEvent.hpp"
-
+#include "Zombie.hpp"
 	
 ZombieEvent::ZombieEvent()
 {
@@ -26,12 +28,21 @@ ZombieEvent::~ZombieEvent()
 	return;
 }
 
-void		setZombieType()
-{
-
+void		ZombieEvent::setZombieType(std::string const type)
+{	
+	this->type = type;
 }
 
-Zombie* 	new Zombie(std::string name)
+Zombie* 	ZombieEvent::newZombie(std::string const name)
 {
+	Zombie *zombie = new Zombie(this->type, name);
+	return (zombie);
 }
-//After this, you will create aZombieEventclass. It will have asetZombieTypefunc-tion, that will store a type in the object, and a functionZombie* newZombie(std::stringname)that will create aZombiewith the chosen type, name it, and return it.
+
+void		ZombieEvent::randomChump()
+{
+	std::string names[10] = ["Harry", "Rob", "Zorro", "Marcus", "Fred", "Gina", "Dirk", "Selma", "Tessa", "Erin"];
+	this->newZombie(names[1]);
+}
+//You will also make a randomChump function, that will create a Zombie with a random name, and make it announce itself. 
+//After this, you will create a ZombieEventclass. It will have a setZombieType function, that will store a type in the object, and a function Zombie* newZombie(std::string name) that will create a Zombie with the chosen type, name it, and return it.
