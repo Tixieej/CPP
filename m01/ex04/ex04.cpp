@@ -6,8 +6,14 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 14:40:10 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/09/03 14:40:12 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/09/03 14:42:59 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
+
+int		main(void)
+{
+
+}
 
