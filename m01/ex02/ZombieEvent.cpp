@@ -6,12 +6,13 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/01 14:26:37 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/09/01 23:03:25 by rixt          ########   odam.nl         */
+/*   Updated: 2020/09/03 14:40:42 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include <iostream>
+#include <cstdlib>
 #include "ZombieEvent.hpp"
 #include "Zombie.hpp"
 	
@@ -39,10 +40,12 @@ Zombie* 	ZombieEvent::newZombie(std::string const name)
 	return (zombie);
 }
 
-void		ZombieEvent::randomChump()
+Zombie*		ZombieEvent::randomChump()
 {
-	std::string names[10] = ["Harry", "Rob", "Zorro", "Marcus", "Fred", "Gina", "Dirk", "Selma", "Tessa", "Erin"];
-	this->newZombie(names[1]);
+	int rn;
+	std::string names[10] = {"Harry", "Rob", "Zorro", "Marcus", "Fred", "Gina", "Dirk", "Selma", "Tessa", "Erin"};
+	rn = rand() % 10;
+	Zombie *zombie = new Zombie(this->type, names[rn]);
+	zombie->announce();
+	return (zombie);
 }
-//You will also make a randomChump function, that will create a Zombie with a random name, and make it announce itself. 
-//After this, you will create a ZombieEventclass. It will have a setZombieType function, that will store a type in the object, and a function Zombie* newZombie(std::string name) that will create a Zombie with the chosen type, name it, and return it.

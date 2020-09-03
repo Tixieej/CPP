@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/01 14:26:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/09/03 11:55:11 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/09/03 11:51:49 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/09/03 14:39:26 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-# include <string>
+#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
-class Zombie
+int		main(void)
 {
-	public:
-		Zombie(std::string type, std::string name);
-		~Zombie();
-		void	announce(void);
-	private:
-		std::string		type,
-						name;
-};
-
-#endif
+	ZombieHorde horde(4);
+	horde.announce();
+	return (0);
+}
