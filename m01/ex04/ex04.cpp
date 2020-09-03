@@ -1,28 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Zombie.hpp                                         :+:    :+:            */
+/*   ex04.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/01 14:26:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/09/03 11:55:11 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/09/03 14:40:10 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/09/03 14:42:59 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-# include <string>
+#include <string>
 
-class Zombie
+int		main(void)
 {
-	public:
-		Zombie(std::string type, std::string name);
-		~Zombie();
-		void	announce(void);
-	private:
-		std::string		type,
-						name;
-};
 
-#endif
+}
+
