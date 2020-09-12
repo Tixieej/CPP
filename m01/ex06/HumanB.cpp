@@ -6,24 +6,33 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 22:30:23 by rixt          #+#    #+#                 */
-/*   Updated: 2020/09/03 22:50:33 by rixt          ########   odam.nl         */
+/*   Updated: 2020/09/12 14:09:37 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+#include <string>
+#include <iostream>
+#include "Weapon.hpp"
 
-HumanB::HumanB()
+HumanB::HumanB(std::string name)
 {
-	std::cout << "B" << std::endl;
+	this->name = name;
+	std::cout << "Welcome, " << name << std::endl;
 }
 
 HumanB::~HumanB()
 {
-	std::cout << "end B" << std::endl;
+	std::cout << this->name << " dies" << std::endl;
 }
 
-//a Weapon, a name, and
-//an attack() function that displays something like:
-//NAME attacks with his WEAPON_TYPE
-//Make it so the following code produces attacks with "crude spiked club" THEN "some
-//other type of club", in both test cases:
+void		HumanB::attack()
+{
+	std::cout << this->name << " attacks with " << this->weapon->getType() << std::endl;
+}
+
+void		HumanB::setWeapon(Weapon &test)
+{
+	this->weapon = &test;
+	std::cout << "Weapon of " << this->name << " set to weapon " << std::endl;
+}
