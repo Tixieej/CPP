@@ -6,14 +6,13 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 22:30:23 by rixt          #+#    #+#                 */
-/*   Updated: 2020/09/12 14:09:37 by rixt          ########   odam.nl         */
+/*   Updated: 2020/09/12 15:20:19 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 #include <string>
 #include <iostream>
-#include "Weapon.hpp"
 
 HumanB::HumanB(std::string name)
 {
