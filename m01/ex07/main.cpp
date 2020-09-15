@@ -6,53 +6,55 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/12 15:29:06 by rixt          #+#    #+#                 */
-/*   Updated: 2020/09/13 18:02:50 by rixt          ########   odam.nl         */
+/*   Updated: 2020/09/15 11:42:58 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fstream>
 #include <iostream>
+#include <string>
 
-int		main(void)
+void replace_string(std::string &line, std::string s1, std::string s2)
 {
-	std::ifstream	ifs("story");
-	std::string		s1 = "dog";
-	std::string		s2 = "cat";
-	std::string		test;
-	std::ofstream	ofs("story.replace");
+    size_t pos = line.find(s1);
+    while (pos != std::string::npos)
+    {
+        line.replace(pos, s1.size(), s2);
+        pos = line.find(s1, pos + s2.size());
+    }
+}
 
-	std::cout << "Start" << std::endl;
-
-	while(std::getline(ifs, test))
+int		main(int argc, char *argv[])
+{
+	std::string		file, s1, s2, line;
+	
+	if (argc != 4)
 	{
-		std::cout << test << std::endl;
-		ofs << test << std::endl;
+		std::cout << "Please give a filename and two strings" << std::endl;
+		return 0;
 	}
-	
-
-//	while (!ifs.eof())
-//	{
-//		ifs >> test;
-//		if (ifs.eof())
-//			break;
-//		std::cout << test << " ";
-//		if (test == s1)
-//			ofs << s2;
-//		else
-//			ofs << test;
-//		ofs << " ";
-//	}
-	
-	std::cout << "1" << std::endl;
-	std::cout << std::endl;
-	std::cout << "2" << std::endl;
+	file = argv[1];
+	std::ifstream	ifs(file);
+	s1 = argv[2];
+	s2 = argv[3];
+	if (!ifs)
+	{
+		std::cout << "Something went wrong while opening the file" << std::endl;
+		return 0;
+	}
+	if (s1 == "" || s2 == "")
+	{
+		std::cout << "Empty strings are not aloud" << std::endl;
+		return 0;
+	}
+	std::string		output = file.append(".replace");
+	std::ofstream	ofs(output);
+	while (std::getline(ifs, line))
+	{
+		replace_string(line, s1, s2);
+		ofs << line << std::endl;
+	}
 	ifs.close();
-
-
-	std::cout << "3" << std::endl;
-	ofs << std::endl;
 	ofs.close();
-	std::cout << "Stop" << std::endl;
 	return 0;
 }
-//Idee: read een line, split op spaties, vervang s1 door s2, maak er weer een line van, put in file.replace, plak er een endl achter, next.
