@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:13:58 by rixt          #+#    #+#                 */
-/*   Updated: 2020/09/03 18:57:27 by rixt          ########   odam.nl         */
+/*   Updated: 2020/09/15 14:33:59 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Human
 		Human();
 		~Human();
 		std::string	identify();
-		const Brain	getBrain();
+		const Brain	&getBrain();
 	private:
 		const		Brain brain;
 };

@@ -6,7 +6,7 @@
 #    By: rde-vrie <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/31 10:56:55 by rde-vrie      #+#    #+#                  #
-#    Updated: 2020/09/15 11:00:46 by rde-vrie      ########   odam.nl          #
+#    Updated: 2020/09/15 11:54:21 by rde-vrie      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,6 @@ NAME = replace
 OBJ = main.o
 CC = clang++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-#INC = .hpp
 
 .PHONY: all clean fclean re test
 
@@ -33,6 +32,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-test: $(NAME)
-	./$(NAME)

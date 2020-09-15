@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 16:12:34 by rixt          #+#    #+#                 */
-/*   Updated: 2020/09/03 18:57:31 by rixt          ########   odam.nl         */
+/*   Updated: 2020/09/15 14:34:38 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ std::string		Human::identify()
 	return (this->brain.identify());
 }
 
-const Brain			Human::getBrain()
+const Brain			&Human::getBrain()
 {
 	return (this->brain);
 }

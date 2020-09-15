@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/03 22:30:23 by rixt          #+#    #+#                 */
-/*   Updated: 2020/09/12 15:20:19 by rixt          ########   odam.nl         */
+/*   Updated: 2020/09/15 13:21:47 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,22 @@
 
 HumanB::HumanB(std::string name)
 {
-	this->name = name;
+	this->_name = name;
 	std::cout << "Welcome, " << name << std::endl;
 }
 
 HumanB::~HumanB()
 {
-	std::cout << this->name << " dies" << std::endl;
+	std::cout << this->_name << " dies" << std::endl;
 }
 
-void		HumanB::attack()
+void		HumanB::attack() const
 {
-	std::cout << this->name << " attacks with " << this->weapon->getType() << std::endl;
+	std::cout << this->_name << " attacks with " << this->_weapon->getType() << std::endl;
 }
 
-void		HumanB::setWeapon(Weapon &test)
+void		HumanB::setWeapon(Weapon &weapon)
 {
-	this->weapon = &test;
-	std::cout << "Weapon of " << this->name << " set to weapon " << std::endl;
+	this->_weapon = &weapon;
+	std::cout << "Weapon of " << this->_name << " set to " << this->_weapon->getType() << std::endl;
 }
