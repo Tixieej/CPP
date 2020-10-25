@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 14:17:48 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/10/24 15:03:00 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/10/25 13:45:01 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Fixed
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
 	private:
-		int					fixedPointValue;
-		static const int	fracBits;
+		int					_fixedPointValue;
+		static const int	_fracBits;
 		
 };
 
