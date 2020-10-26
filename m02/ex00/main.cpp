@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Fixed.class.hpp                                    :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/09/17 14:17:48 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/10/26 13:46:14 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/10/26 11:50:15 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/10/26 12:01:48 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_CLASS_H
-# define FIXED_CLASS_H
+#include "Fixed.class.hpp"
+#include <iostream>
 
-class Fixed
+int		main(void)
 {
-	public:
-		Fixed();
-		Fixed(Fixed const &number);
-		~Fixed();
-		void	operator=(Fixed const &number);
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-	private:
-		int					_fixedPointValue;
-		static const int	_fracBits;
-};
-
-#endif
+	Fixed a;
+	Fixed b(a);
+	Fixed c;
+	
+	c = b;
+	
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
+	
+	return 0;
+}
