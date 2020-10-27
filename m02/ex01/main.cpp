@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/26 11:50:15 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/10/27 13:56:39 by rixt          ########   odam.nl         */
+/*   Updated: 2020/10/27 14:08:14 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(void)
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;	
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
 	return 0;
 }
