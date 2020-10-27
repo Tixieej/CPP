@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 14:17:48 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/10/27 14:03:58 by rixt          ########   odam.nl         */
+/*   Updated: 2020/10/27 16:08:28 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 class Fixed
 {
 	public:
-		Fixed();
-		Fixed(Fixed const &number);
+		Fixed(void);
+		Fixed(Fixed const &copy);
 		Fixed(const int i);
 		Fixed(const float f);
 		~Fixed();

@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/17 14:18:19 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/10/27 13:56:00 by rixt          ########   odam.nl         */
+/*   Updated: 2020/10/27 16:08:40 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 
 const int 		Fixed::_fracBits = 8;
 
-Fixed::Fixed()
+Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->_fixedPointValue = 0;
 }
 
-Fixed::Fixed(Fixed const &number)
+Fixed::Fixed(Fixed const &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_fixedPointValue = number.getRawBits();
+	this->_fixedPointValue = copy.getRawBits();
 }
 
 Fixed::Fixed(const int i)
@@ -59,24 +59,21 @@ std::ostream	&operator<<(std::ostream &o, Fixed const &number)
 
 int				Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedPointValue);
 }
 
 void 			Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_fixedPointValue = raw;
 }
 
-float			Fixed::toFloat( void ) const
+float			Fixed::toFloat(void) const
 {
 	float number = ((float)this->_fixedPointValue / (1 << Fixed::_fracBits));	
 	return (number);
 }
 
-int				Fixed::toInt( void ) const
+int				Fixed::toInt(void) const
 {
-	int number = (int)roundf(this->_fixedPointValue / (1 << Fixed::_fracBits));	
-	return (number);
+	return (this->_fixedPointValue << Fixed::_fracBits);	
 }
