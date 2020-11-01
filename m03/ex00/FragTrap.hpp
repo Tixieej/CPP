@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 15:03:59 by rixt          #+#    #+#                 */
-/*   Updated: 2020/10/27 16:50:31 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/01 13:20:57 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,24 @@ class FragTrap
 		FragTrap(std::string);
 		FragTrap(FragTrap const &);
 		~FragTrap();
-		void		FragTrap::operator=(FragTrap const &);
-		rangedAttack(std::string const & target);
-		meleeAttack(std::string const & target);
-		takeDamage(unsigned int amount);
-		beRepaired(unsigned int amount);
+		void		operator=(FragTrap const &);
+		void		rangedAttack(std::string const & target);
+		void		meleeAttack(std::string const & target);
+		void		takeDamage(unsigned int amount);
+		void		beRepaired(unsigned int amount);
+		void		vaulthunter_dot_exe(std::string const & target);
+		std::string	getName(void) const;
 
 	private:
-		int			HP;
-		int			maxHP;
-		int			energy;
-		int			maxEnergy;
-		int			level;
-		std::string	name;
-		int			meleeAtkDmg;
-		int			rangedAtkDmg;
-		int			armorDmgRed;
+		int			_HP;
+		int			_maxHP;
+		int			_energy;
+		int			_maxEnergy;
+		int			_level;
+		std::string	_name;
+		int			_meleeAtkDmg;
+		int			_rangedAtkDmg;
+		int			_armorDmgRed;
 };
 
 #endif
