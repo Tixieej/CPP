@@ -6,11 +6,12 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 09:35:50 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 11:45:19 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/02 13:28:29 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include <stdio.h>	/* NULL */
 #include <stdlib.h>	/* srand */
 #include <time.h>	/* time */
@@ -18,6 +19,7 @@
 
 int		main(void)
 {
+	
 	srand (time(NULL));
 	std::cout << time(NULL) << std::endl;
 	FragTrap robot("Robot");
@@ -50,8 +52,44 @@ int		main(void)
 	robot.vaulthunter_dot_exe("Rixt");
 	robot.rangedAttack("Peter");
 	std::cout << std::endl;
-	
+
 	robot.takeDamage(120);
+	std::cout << std::endl;
+
+	std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
+	std::cout << std::endl;
+	
+	ScavTrap scav1("Machine");
+	ScavTrap scav2("Floris");
+	ScavTrap scavCopy(scav2);
+	scavCopy = scav1;
+	std::cout << std::endl;
+
+	scav1.rangedAttack("Peter");
+	scav1.takeDamage(35);
+	scav1.beRepaired(20);
+	std::cout << std::endl;
+
+	scavCopy.takeDamage(100);
+	scavCopy.takeDamage(100);
+	scavCopy.takeDamage(100);
+	scavCopy.beRepaired(20);
+	std::cout << std::endl;
+
+	scav1.meleeAttack("Flip");
+	scav1.takeDamage(40);
+	scav1.beRepaired(70);
+	std::cout << std::endl;
+
+	scav1.challengeNewcomer("Peter");
+	scav1.challengeNewcomer("Jan");
+	scav1.challengeNewcomer("Iris");
+	scav1.challengeNewcomer("Henk");
+	scav1.challengeNewcomer("Rixt");
+	scav1.challengeNewcomer("Peter");
+	std::cout << std::endl;
+	
+	scav1.takeDamage(120);
 	std::cout << std::endl;
 	
 	return (0);

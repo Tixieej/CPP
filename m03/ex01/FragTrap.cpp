@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/02 11:58:14 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/02 13:21:35 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 FragTrap::FragTrap(std::string name) : _name(name)
 {
-	std::cout << "FR4G-TP " << name << " is constructed." << std::endl;
+	std::cout << "-->FR4G-TP " << name << ": Look out everybody! Things are about to get awesome!" << std::endl;
 	this->_HP = 100;
 	this->_maxHP = 100;
 	this->_energy = 100;
@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string name) : _name(name)
 
 FragTrap::FragTrap(FragTrap const &copy)
 {
-	std::cout << "A copy of FR4G-TP " << copy.getName() << " is constructed." << std::endl;
+	std::cout << "-->A copy of FR4G-TP " << copy.getName() << " is constructed." << std::endl;
 	*this = copy;
 }
 
@@ -98,7 +98,7 @@ void		FragTrap::beRepaired(unsigned int amount)
 void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
 	if (this->_energy < 25)
-		std::cout << "FR4G-TP " << this->_name << " tries to attack " << target <<  ", but is out of energy." << std::endl;
+		std::cout << "FR4G-TP " << this->_name << " tries to attack " << target << ", but is out of energy." << std::endl;
 	else
 	{
 		this->_energy -= 25;
@@ -120,10 +120,7 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 			"Blight Bot",
 			"Rubber Ducky",
 			"Senseless Sacrifice",
-			"Medbot"
-		};
-
-		std::cout << "F to the R to the 4 to the G to the WHAAT!" << std::endl;
+			"Medbot"};
 		std::cout << "FR4G-TP " << this->_name << " sends action package " <<  attacks[rn] << " to " << target << "." << std::endl;
 	}
 }
