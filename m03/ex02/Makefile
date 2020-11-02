@@ -6,15 +6,15 @@
 #    By: rde-vrie <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/31 10:56:55 by rde-vrie      #+#    #+#                  #
-#    Updated: 2020/11/02 13:27:07 by rde-vrie      ########   odam.nl          #
+#    Updated: 2020/11/02 16:49:03 by rde-vrie      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex02
-OBJ = main.o FragTrap.o ScavTrap.o
+OBJ = main.o FragTrap.o ScavTrap.o ClapTrap.o
 CC = clang++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-INC = FragTrap.hpp ScavTrap.hpp
+INC = FragTrap.hpp ScavTrap.hpp ClapTrap.hpp
 
 .PHONY: all clean fclean re test
 

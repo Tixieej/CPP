@@ -6,10 +6,11 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 09:35:50 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 13:18:30 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/02 17:30:24 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include <stdio.h>	/* NULL */

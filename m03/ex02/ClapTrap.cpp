@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:29:14 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 13:54:48 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/02 17:30:17 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {
 	std::cout << "-->CL4P-TP " << name << ": nog niet af!" << std::endl;
-	this->_HP = 100;
-	this->_maxHP = 100;
-	this->_energy = 100;//moeten deze waardes blijven? ze worden overschreven toch?
-	this->_maxEnergy = 100;
+	this->_HP = 0;
+	this->_maxHP = 0;
+	this->_energy = 0;
+	this->_maxEnergy = 0;
 	this->_level = 1;
-	this->_meleeAtkDmg = 30;
-	this->_rangedAtkDmg = 20;
-	this->_armorDmgRed = 5;
+	this->_meleeAtkDmg = 0;
+	this->_rangedAtkDmg = 0;
+	this->_armorDmgRed = 0;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &copy)
@@ -67,7 +67,7 @@ void		ClapTrap::meleeAttack(std::string const & target)
 	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " from nearby, causing " << this->_meleeAtkDmg << " points of damage!" << std::endl;
 }
 
-void		FragTrap::takeDamage(unsigned int amount)
+void		ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "Enemy attacks FR4G-TP " << this->_name;
 	int damage = amount - this->_armorDmgRed;
@@ -85,7 +85,7 @@ void		FragTrap::takeDamage(unsigned int amount)
 	std::cout << "HP is now at " << this->_HP << "!" << std::endl;
 }
 
-void		FragTrap::beRepaired(unsigned int amount)
+void		ClapTrap::beRepaired(unsigned int amount)
 {
 	this->_HP += amount;
 	if (this->_HP > this->_maxHP)
