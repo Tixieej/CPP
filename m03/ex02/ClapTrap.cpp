@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:29:14 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 17:30:17 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/02 19:16:04 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {
-	std::cout << "-->CL4P-TP " << name << ": nog niet af!" << std::endl;
+	std::cout << "-->CL4P-TP " << name << " is constructed:";
 	this->_HP = 0;
 	this->_maxHP = 0;
 	this->_energy = 0;

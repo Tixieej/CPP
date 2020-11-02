@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:34:04 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 17:30:19 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/02 19:16:02 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap
 		void		beRepaired(unsigned int amount);
 		std::string	getName(void) const;
 
-	protected: // is het nodig om dit protected te maken? voor allemaal?
+	protected:
 		int			_HP;
 		int			_maxHP;
 		int			_energy;
