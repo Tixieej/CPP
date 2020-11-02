@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 09:35:50 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/01 13:56:32 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/02 09:47:15 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		main(void)
 
 	robot.rangedAttack("Peter");
 	robot.takeDamage(35);
+	robot.takeDamage(4);
 	robot.beRepaired(20);
 	std::cout << std::endl;
 

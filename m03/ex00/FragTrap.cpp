@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/01 13:56:08 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/02 09:51:17 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 FragTrap::FragTrap(std::string name) : _name(name)
 {
-	std::cout << "FR4G-TP " << name << " is constructed" << std::endl;
+	std::cout << "FR4G-TP " << name << " is constructed." << std::endl;
 	this->_HP = 100;
 	this->_maxHP = 100;
 	this->_energy = 100;
@@ -35,7 +35,7 @@ FragTrap::FragTrap(FragTrap const &copy)
 
 FragTrap::~FragTrap()
 {
-	std::cout << "FR4G-TP " << this->_name << " is destructed" << std::endl;
+	std::cout << "FR4G-TP " << this->_name << " is destructed." << std::endl;
 }
 
 void		FragTrap::operator=(FragTrap const &src)
@@ -49,7 +49,7 @@ void		FragTrap::operator=(FragTrap const &src)
 	this->_meleeAtkDmg = src._meleeAtkDmg;
 	this->_rangedAtkDmg = src._rangedAtkDmg;
 	this->_armorDmgRed = src._armorDmgRed;
-	std::cout << "Assignation operator overload to " << this->_name << std::endl;
+	std::cout << "Assignation operator overload to " << this->_name << "." << std::endl;
 }
 
 std::string	FragTrap::getName(void) const
@@ -70,25 +70,19 @@ void		FragTrap::meleeAttack(std::string const & target)
 void		FragTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "Enemy attacks FR4G-TP " << this->_name;
-	//als amount < armorDmgRed -> no damage taken
-	//als damage > HP -> no hp left (before attack and after attack)
-	//normal damage
 	int damage = amount - this->_armorDmgRed;
 	if (this->_HP <= 0)
-		std::cout << ", but HP is already at 0" << std::endl;
+		std::cout << ", but HP is already at 0." << std::endl;
 	else if (damage <= 0)
-		std::cout << ", but no damage is taken" << std::endl;
+		std::cout << ", but no damage is taken." << std::endl;
 	else
 	{
 		this->_HP -= damage;
-		std::cout << " and " << damage << " damage is taken" << std::endl;
+		std::cout << " and " << damage << " damage is taken." << std::endl;
 	}
 	if (this->_HP < 0)
 		this->_HP = 0;
 	std::cout << "HP is now at " << this->_HP << "!" << std::endl;
-//	std::cout << "Enemy attacks FR4G-TP " << this->_name << " with " << amount << " damage, causing " << damage << " points of damage!" << std::endl;
-
-// hp is now ...
 }
 
 void		FragTrap::beRepaired(unsigned int amount)
@@ -96,7 +90,7 @@ void		FragTrap::beRepaired(unsigned int amount)
 	this->_HP += amount;
 	if (this->_HP > this->_maxHP)
 		this->_HP = this->_maxHP;
-	std::cout << "FR4G-TP " << this->_name << " is being repaired for " << amount << " HP" << std::endl;
+	std::cout << "FR4G-TP " << this->_name << " is being repaired for " << amount << " HP." << std::endl;
 
 	std::cout << "HP is now at " << this->_HP << "!" << std::endl;
 }
@@ -104,7 +98,7 @@ void		FragTrap::beRepaired(unsigned int amount)
 void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 {
 	if (this->_energy <= 25)
-		std::cout << "FR4G-TP " << this->_name << " is out of energy" << std::endl;
+		std::cout << "FR4G-TP " << this->_name << " is out of energy." << std::endl;
 	else
 	{
 		this->_energy -= 25;
@@ -127,6 +121,6 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 			"Rubber Ducky",
 			"Senseless Sacrifice",
 			"Medbot"};
-		std::cout << "FR4G-TP " << this->_name << " sends action package " <<  attacks[rn] << " to " << target << std::endl;
+		std::cout << "FR4G-TP " << this->_name << " sends action package " <<  attacks[rn] << " to " << target << "." << std::endl;
 	}
 }
