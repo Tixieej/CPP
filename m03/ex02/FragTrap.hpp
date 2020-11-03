@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 15:03:59 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/02 17:30:23 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/03 09:46:39 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class FragTrap : public ClapTrap
 		~FragTrap();
 		void		operator=(FragTrap const &);
 		void		vaulthunter_dot_exe(std::string const & target);
-		std::string	getName(void) const;
 
 	private:
 };

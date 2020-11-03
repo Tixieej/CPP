@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:29:14 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 19:16:04 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/03 10:32:13 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {
-	std::cout << "-->CL4P-TP " << name << " is constructed:";
+	std::cout << "--> CL4P-TP " << name << " is constructed: " << std::endl;
 	this->_HP = 0;
 	this->_maxHP = 0;
 	this->_energy = 0;
@@ -29,13 +29,13 @@ ClapTrap::ClapTrap(std::string name) : _name(name)
 
 ClapTrap::ClapTrap(ClapTrap const &copy)
 {
-	std::cout << "-->A copy of CL4P-TP " << copy.getName() << " is constructed." << std::endl;
+	std::cout << "--> A copy of CL4P-TP " << copy.getName() << " is constructed: " << std::endl;
 	*this = copy;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "CL4P-TP " << this->_name << " is destructed." << std::endl;
+	std::cout << "CL4P-TP " << this->_name << " is at the end of its life." << std::endl;
 }
 
 void		ClapTrap::operator=(ClapTrap const &src)
@@ -59,17 +59,17 @@ std::string	ClapTrap::getName(void) const
 
 void		ClapTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " << this->_rangedAtkDmg << " points of damage!" << std::endl;
+	std::cout << "CL4P-TP " << this->_name << " attacks " << target << " at range, causing " << this->_rangedAtkDmg << " points of damage!" << std::endl;
 }
 
 void		ClapTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " from nearby, causing " << this->_meleeAtkDmg << " points of damage!" << std::endl;
+	std::cout << "CL4P-TP " << this->_name << " attacks " << target << " from nearby, causing " << this->_meleeAtkDmg << " points of damage!" << std::endl;
 }
 
 void		ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << "Enemy attacks FR4G-TP " << this->_name;
+	std::cout << "Enemy attacks CL4P-TP " << this->_name;
 	int damage = amount - this->_armorDmgRed;
 	if (this->_HP <= 0)
 		std::cout << ", but HP is already at 0." << std::endl;
@@ -90,7 +90,7 @@ void		ClapTrap::beRepaired(unsigned int amount)
 	this->_HP += amount;
 	if (this->_HP > this->_maxHP)
 		this->_HP = this->_maxHP;
-	std::cout << "FR4G-TP " << this->_name << " is being repaired for " << amount << " HP." << std::endl;
+	std::cout << "CL4P-TP " << this->_name << " is being repaired for " << amount << " HP." << std::endl;
 
 	std::cout << "HP is now at " << this->_HP << "!" << std::endl;
 }

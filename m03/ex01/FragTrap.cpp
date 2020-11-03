@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/02 13:21:35 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/03 10:28:53 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 FragTrap::FragTrap(std::string name) : _name(name)
 {
-	std::cout << "-->FR4G-TP " << name << ": Look out everybody! Things are about to get awesome!" << std::endl;
+	std::cout << "--> FR4G-TP " << name << ": Look out everybody! Things are about to get awesome!" << std::endl;
 	this->_HP = 100;
 	this->_maxHP = 100;
 	this->_energy = 100;
@@ -29,7 +29,7 @@ FragTrap::FragTrap(std::string name) : _name(name)
 
 FragTrap::FragTrap(FragTrap const &copy)
 {
-	std::cout << "-->A copy of FR4G-TP " << copy.getName() << " is constructed." << std::endl;
+	std::cout << "--> A copy of FR4G-TP " << copy.getName() << " is constructed." << std::endl;
 	*this = copy;
 }
 

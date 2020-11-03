@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:39:05 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 11:59:07 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/03 10:28:43 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 ScavTrap::ScavTrap(std::string name) : _name(name)
 {
-	std::cout << "-->SC4V-TP " << name << ": Let's get this party started!" << std::endl;
+	std::cout << "--> SC4V-TP " << name << ": Let's get this party started!" << std::endl;
 	this->_HP = 100;
 	this->_maxHP = 100;
 	this->_energy = 50;
@@ -29,7 +29,7 @@ ScavTrap::ScavTrap(std::string name) : _name(name)
 
 ScavTrap::ScavTrap(ScavTrap const &copy)
 {
-	std::cout << "-->A copy of SC4V-TP " << copy.getName() << " introduces itself." << std::endl;
+	std::cout << "--> A copy of SC4V-TP " << copy.getName() << " introduces itself." << std::endl;
 	*this = copy;
 }
 

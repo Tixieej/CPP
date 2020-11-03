@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 09:35:50 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 17:30:24 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/03 11:16:31 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int		main(void)
 {
 	
 	srand (time(NULL));
-	std::cout << time(NULL) << std::endl;
 	FragTrap robot("Robot");
 	FragTrap jaap("Jaap");
 	FragTrap copy(jaap);

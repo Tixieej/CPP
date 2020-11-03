@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/02 17:30:21 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/03 10:32:11 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "-->FR4G-TP " << name << ": Look out everybody! Things are about to get awesome!" << std::endl;
+	std::cout << "FR4G-TP " << name << ": Look out everybody! Things are about to get awesome!" << std::endl;
 	this->_HP = 100;
 	this->_maxHP = 100;
 	this->_energy = 100;
@@ -28,9 +28,9 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name)
 	this->_armorDmgRed = 5;
 }
 
-FragTrap::FragTrap(FragTrap const &copy) : ClapTrap(copy.getName())
+FragTrap::FragTrap(FragTrap const &copy) : ClapTrap(copy)
 {
-	std::cout << "-->A copy of FR4G-TP " << copy.getName() << " is constructed." << std::endl;
+	std::cout << "FR4G-TP copy " << copy.getName() << ": Look out everyone, this is awesome!" << std::endl;
 	*this = copy;
 }
 
@@ -52,49 +52,6 @@ void		FragTrap::operator=(FragTrap const &src)
 	this->_armorDmgRed = src._armorDmgRed;
 	std::cout << "Assignation operator overload to " << this->_name << "." << std::endl;
 }
-
-std::string	FragTrap::getName(void) const
-{
-	return (this->_name);
-}
-
-//void		FragTrap::rangedAttack(std::string const & target)
-//{
-//	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " << this->_rangedAtkDmg << " points of damage!" << std::endl;
-//}
-
-//void		FragTrap::meleeAttack(std::string const & target)
-//{
-//	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " from nearby, causing " << this->_meleeAtkDmg << " points of damage!" << std::endl;
-//}
-
-//void		FragTrap::takeDamage(unsigned int amount)
-//{
-//	std::cout << "Enemy attacks FR4G-TP " << this->_name;
-//	int damage = amount - this->_armorDmgRed;
-//	if (this->_HP <= 0)
-//		std::cout << ", but HP is already at 0." << std::endl;
-//	else if (damage <= 0)
-//		std::cout << ", but no damage is taken." << std::endl;
-//	else
-//	{
-//		this->_HP -= damage;
-//		std::cout << " and " << damage << " damage is taken." << std::endl;
-//	}
-//	if (this->_HP < 0)
-//		this->_HP = 0;
-//	std::cout << "HP is now at " << this->_HP << "!" << std::endl;
-//}
-
-//void		FragTrap::beRepaired(unsigned int amount)
-//{
-//	this->_HP += amount;
-//	if (this->_HP > this->_maxHP)
-//		this->_HP = this->_maxHP;
-//	std::cout << "FR4G-TP " << this->_name << " is being repaired for " << amount << " HP." << std::endl;
-//
-//	std::cout << "HP is now at " << this->_HP << "!" << std::endl;
-//}
 
 void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 {

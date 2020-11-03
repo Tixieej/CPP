@@ -6,38 +6,25 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 11:09:08 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 19:16:08 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/03 09:46:46 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_H
 # define SCAVTRAP_H
 # include <string>
+# include "ClapTrap.hpp"
 
-class ScavTrap
+class ScavTrap : public ClapTrap
 {
 	public:
 		ScavTrap(std::string);
 		ScavTrap(ScavTrap const &);
 		~ScavTrap();
 		void		operator=(ScavTrap const &);
-		void		rangedAttack(std::string const & target);
-		void		meleeAttack(std::string const & target);
-		void		takeDamage(unsigned int amount);
-		void		beRepaired(unsigned int amount);
 		void		challengeNewcomer(std::string const & target);
-		std::string	getName(void) const;
 
 	private:
-		int			_HP;
-		int			_maxHP;
-		int			_energy;
-		int			_maxEnergy;
-		int			_level;
-		std::string	_name;
-		int			_meleeAtkDmg;
-		int			_rangedAtkDmg;
-		int			_armorDmgRed;
 };
 
 #endif
