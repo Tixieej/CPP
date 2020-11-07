@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:34:04 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 19:16:02 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/07 14:36:47 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 class ClapTrap
 {
 	public:
+		ClapTrap();
 		ClapTrap(std::string);
 		ClapTrap(ClapTrap const &);
 		~ClapTrap();
@@ -37,6 +38,8 @@ class ClapTrap
 		int			_meleeAtkDmg;
 		int			_rangedAtkDmg;
 		int			_armorDmgRed;
+
+	private:
 };
 
 #endif

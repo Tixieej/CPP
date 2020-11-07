@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:09:53 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/03 13:33:20 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/07 14:36:55 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class SuperTrap : public FragTrap, public NinjaTrap
 	//	void		ninjaShoebox(std::string const & target);
 
 	private:
+		SuperTrap();
 };
 
 #endif

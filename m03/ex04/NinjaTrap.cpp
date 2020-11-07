@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 10:42:15 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/03 11:46:51 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/07 14:38:09 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "NinjaTrap.hpp"
 #include <string>
 #include <iostream>
+
+NinjaTrap::NinjaTrap() : ClapTrap()
+{
+	std::cout << "Default Ninjatrap Constructor" << std::endl;
+}
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
 {

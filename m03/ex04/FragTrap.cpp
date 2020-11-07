@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/03 10:26:29 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/07 14:36:49 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 #include "FragTrap.hpp"
 #include <string>
 #include <iostream>
+
+FragTrap::FragTrap() : ClapTrap()
+{
+	std::cout << "Default Fragtrap Constructor" << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {

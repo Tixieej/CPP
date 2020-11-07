@@ -6,13 +6,16 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:29:14 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/03 10:27:20 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/07 14:36:51 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <string>
 #include <iostream>
+
+ClapTrap::ClapTrap()
+{}
 
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {

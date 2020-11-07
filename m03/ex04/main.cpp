@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 09:35:50 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/03 11:11:14 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/07 14:36:52 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 #include <stdio.h>	/* NULL */
 #include <stdlib.h>	/* srand */
 #include <time.h>	/* time */
@@ -125,6 +126,48 @@ std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´�
 	std::cout << std::endl;
 	
 	ninja1.takeDamage(120);
+	std::cout << std::endl;
+
+std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
+	std::cout << std::endl;
+	
+	SuperTrap super1("Tramp");
+	SuperTrap super2("Man");
+	SuperTrap superCopy(super2);
+	superCopy = super1;
+	std::cout << std::endl;
+
+	super1.rangedAttack("Persoon");
+	super1.takeDamage(35);
+	super1.beRepaired(20);
+	std::cout << std::endl;
+
+	superCopy.takeDamage(100);
+	superCopy.takeDamage(100);
+	superCopy.beRepaired(20);
+	std::cout << std::endl;
+
+	super1.meleeAttack("Flip");
+	super1.takeDamage(40);
+	super1.beRepaired(70);
+	std::cout << std::endl;
+
+	super1.ninjaShoebox("Jonas");
+	super1.ninjaShoebox("Remco");
+	super1.ninjaShoebox("Boris");
+	super1.ninjaShoebox("Ingmar");
+	super1.ninjaShoebox("Mark");
+	std::cout << std::endl;
+
+	super1.vaulthunter_dot_exe("Peter");
+	super1.vaulthunter_dot_exe("Jan");
+	super1.vaulthunter_dot_exe("Iris");
+	super1.vaulthunter_dot_exe("Henk");
+	super1.vaulthunter_dot_exe("Rixt");
+	super1.rangedAttack("Peter");
+	std::cout << std::endl;
+	
+	super1.takeDamage(120);
 	std::cout << std::endl;
 
 	
