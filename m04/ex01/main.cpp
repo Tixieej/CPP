@@ -1,31 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Peon.hpp                                           :+:    :+:            */
+/*   main.cpp                                           :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/08 11:53:31 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/08 15:57:42 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/11/08 15:00:07 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/11/08 15:57:34 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_H
-# define PEON_H
-# include "Victim.hpp"
-# include <string>
+#include "AWeapon.hpp"
+#include "PlasmaRifle.hpp"
 
-class Peon : public Victim
+int		main(void)
 {
-	public:
-		Peon();
-		Peon(std::string);
-		Peon(Peon const &);
-		~Peon();
-		virtual void		getPolymorphed() const;
-
-	private:
-};
-	std::ostream			&operator<<(std::ostream &, Peon const &);
-
-#endif
+	AWeapon wapen;
+	AWeapon wappie("rifle", 5, 25);
+	AWeapon* pr = new PlasmaRifle();
+	PlasmaRifle pr2;
+	std::cout << pr->getName() << std::endl;
+	return 0;
+}
