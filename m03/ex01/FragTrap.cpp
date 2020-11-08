@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/03 10:28:53 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/08 11:46:51 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ FragTrap::FragTrap(std::string name) : _name(name)
 
 FragTrap::FragTrap(FragTrap const &copy)
 {
-	std::cout << "--> A copy of FR4G-TP " << copy.getName() << " is constructed." << std::endl;
 	*this = copy;
+	std::cout << "--> A copy of FR4G-TP " << copy.getName() << " is constructed." << std::endl;
 }
 
 FragTrap::~FragTrap()
