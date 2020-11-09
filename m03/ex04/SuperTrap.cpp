@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:33:33 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/08 14:38:30 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/09 17:08:55 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ SuperTrap::~SuperTrap()
 	std::cout << "SUP3R-TP " << this->_name << " is destructed." << std::endl;
 }
 
-SuperTrap &		SuperTrap::operator=(SuperTrap const &src)
+SuperTrap			&SuperTrap::operator=(SuperTrap const &src)
 {
 	this->_HP = src._HP;
 	this->_maxHP = src._maxHP;
