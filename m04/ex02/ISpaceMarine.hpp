@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Enemy.hpp                                          :+:    :+:            */
+/*   ISpaceMarine.hpp                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/09 09:47:33 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 18:32:43 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/11/09 18:27:45 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/11/09 18:29:05 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_H
-# define ENEMY_H
-# include <string>
+#ifndef ISPACEMARINE_H
+# define ISPACEMARINE_H
 
-class Enemy
+class ISpaceMarine
 {
 	public:
-		Enemy();
-		Enemy(int hp, std::string const &type);
-		Enemy(Enemy const &);
-		virtual ~Enemy();
-		void				operator=(Enemy const &);
-		int					getHP(void) const;
-		std::string			getType(void) const;
-		virtual void		takeDamage(int);
-
-	protected:
-		int					_hp;
-		std::string			_type;
-	};
+		virtual ~ISpaceMarine() {}
+		virtual ISpaceMarine* clone() const = 0;
+		virtual void	battleCry() const = 0;
+		virtual void	rangedAttack() const = 0;
+		virtual void	meleeAttack() const = 0;
+};
 
 #endif

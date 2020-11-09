@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Enemy.hpp                                          :+:    :+:            */
+/*   Squad.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/09 09:47:33 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 18:32:43 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/11/09 18:19:36 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/11/09 19:47:46 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_H
-# define ENEMY_H
-# include <string>
+#include "Squad.hpp"
 
-class Enemy
+Squad::Squad()
 {
-	public:
-		Enemy();
-		Enemy(int hp, std::string const &type);
-		Enemy(Enemy const &);
-		virtual ~Enemy();
-		void				operator=(Enemy const &);
-		int					getHP(void) const;
-		std::string			getType(void) const;
-		virtual void		takeDamage(int);
+}
 
-	protected:
-		int					_hp;
-		std::string			_type;
-	};
+Squad::Squad(Squad const &copy)
+{
+	*this = copy;
+}
 
-#endif
+Squad::~Squad()
+{
+}
+
+void		Squad::operator=(Squad const &src)
+{
+
+}
