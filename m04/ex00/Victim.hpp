@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 10:50:18 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/08 13:59:42 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/09 13:05:51 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Victim
 		Victim();
 		Victim(std::string);
 		Victim(Victim const &);
-		~Victim();
+		virtual ~Victim();
 		void				operator=(Victim const &);
 		std::string			getName(void) const;
 		virtual void		getPolymorphed(void) const;

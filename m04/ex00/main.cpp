@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 14:06:22 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/08 14:55:04 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/09 13:09:24 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int main(void)
 {
+	/* test main */
 	{
 		Sorcerer robert("Robert", "the Magnificent");
 		Victim jim("Jimmy");
@@ -25,6 +26,7 @@ int main(void)
 		robert.polymorph(joe);
 	}
 	std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
+	/* extra tests */
 	{
 		/* constructors */
 		Sorcerer	gandalf("Gandalf", "the Grey");
@@ -38,13 +40,12 @@ int main(void)
 		std::cout << std::endl;
 
 		Peon		peter("Peter");
-		std::cout << std::endl;
+		Victim*		vic = new Peon("Vic");
 		Peon		person = peter;
-		std::cout << std::endl;
 		Peon		paula(person);
 
 		/* operators */
-		std::cout << std::endl << gandalf << bert << merlin << paula << std::endl;
+		std::cout << std::endl << gandalf << bert << merlin << paula << *vic << std::endl;
 
 		/* functions */
 		merlin.polymorph(bert);
@@ -53,8 +54,10 @@ int main(void)
 		merlin.polymorph(paula);
 		gandalf.polymorph(person);
 		dumbledore.polymorph(peter);
+		vic->getName();
 
 		/* destructors */
+		delete(vic);
 		std::cout << std::endl;
 	}
 	return 0;
