@@ -6,12 +6,11 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 11:52:26 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/08 14:55:24 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/09 16:58:34 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
-#include "Victim.hpp"
 #include <string>
 #include <iostream>
 
@@ -35,9 +34,14 @@ Peon::~Peon()
 	std::cout << "Bleuark..." << std::endl;
 }
 
-void		Peon::getPolymorphed() const
+void				Peon::getPolymorphed() const
 {
 	std::cout << this->_name << " has been turned into a pink pony!" << std::endl;
+}
+
+void				Peon::operator=(Peon const &src)
+{
+	this->_name = src.getName();
 }
 
 std::ostream		&operator<<(std::ostream &o, Peon const &src)

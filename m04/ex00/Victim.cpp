@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 10:44:55 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/08 14:55:32 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/09 15:10:04 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Victim::Victim(Victim const &copy)
 {
 	std::cout << "Copy Victim " << copy.getName() << std::endl;
 	*this = copy;
-	std::cout << "klaar met victim copy" << std::endl;
 }
 
 Victim::~Victim()
