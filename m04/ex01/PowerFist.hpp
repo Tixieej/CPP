@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.hpp                                    :+:    :+:            */
+/*   PowerFist.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/08 15:43:43 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:01:39 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/11/09 09:05:46 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/11/09 17:03:24 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_H
-# define PLASMARIFLE_H
+#ifndef POWERFIST_H
+# define POWERFIST_H
 # include "AWeapon.hpp"
 # include <string>
 
-class PlasmaRifle : public AWeapon
+class PowerFist : public AWeapon
 {
 	public:
-		PlasmaRifle();
-		PlasmaRifle(PlasmaRifle const &);
-		~PlasmaRifle();
-		void				operator=(PlasmaRifle const &);
+		PowerFist();
+		PowerFist(PowerFist const &);
+		~PowerFist();
+		void				operator=(PowerFist const &);
 		virtual void		attack() const;
 };
 

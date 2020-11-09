@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:13:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/08 15:26:52 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/09 17:26:29 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,12 @@
 #include <iostream>
 #include <cmath>
 
-AWeapon::AWeapon()
+AWeapon::AWeapon() : _name(), _apcost(0), _damage(0)
 {
-	this->_name = "";
-	this->_apcost = 0;
-	this->_damage = 0;
 }
 
 AWeapon::AWeapon(std::string const &name, int apcost, int damage) : _name(name), _apcost(apcost), _damage(damage)
 {
-	std::cout << name << ", AP: " << apcost << ", dmg:  " << damage << std::endl;
 }
 
 AWeapon::AWeapon(AWeapon const &copy)
@@ -35,7 +31,7 @@ AWeapon::AWeapon(AWeapon const &copy)
 
 AWeapon::~AWeapon()
 {
-	std::cout << "destructor" << std::endl;
+	std::cout << "Weapon destructed" << std::endl;
 }
 
 std::string			AWeapon::getName(void) const
@@ -52,10 +48,6 @@ int					AWeapon::getDamage(void) const
 {
 	return (this->_damage);
 }
-
-//void				AWeapon::attack() const
-//{//moet dit ook in de cpp?
-//}
 
 void				AWeapon::operator=(AWeapon const &src)
 {

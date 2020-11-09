@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   AWeapon.hpp                                        :+:    :+:            */
+/*   Enemy.hpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/08 15:01:30 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:30:49 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/11/09 09:47:33 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/11/09 17:04:24 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AWEAPON_H
-# define AWEAPON_H
+#ifndef ENEMY_H
+# define ENEMY_H
 # include <string>
 
-class AWeapon
+class Enemy
 {
 	public:
-		AWeapon();
-		AWeapon(std::string const &, int, int);
-		AWeapon(AWeapon const &);
-		virtual ~AWeapon();
-		void				operator=(AWeapon const &);
-		std::string			getName(void) const;
-		int					getAPCost() const;
-		int 				getDamage() const;
-		virtual void		attack() const = 0;
+		Enemy();
+		Enemy(int hp, std::string const &type);
+		Enemy(Enemy const &);
+		virtual ~Enemy();
+		void				operator=(Enemy const &);
+		int					getHP(void) const;
+		std::string			getType(void) const;
+		virtual void		takeDamage(int);
 
 	protected:
-		std::string			_name;
-		int			 		_apcost;
-		int					_damage;
-};
-//	std::ostream			&operator<<(std::ostream &, AWeapon const &);
+		int					_hp;
+		std::string			_type;
+	};
 
 #endif

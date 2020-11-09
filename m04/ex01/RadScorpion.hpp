@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.hpp                                    :+:    :+:            */
+/*   RadScorpion.hpp                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/08 15:43:43 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:01:39 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/11/09 13:19:20 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/11/09 17:17:27 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PLASMARIFLE_H
-# define PLASMARIFLE_H
-# include "AWeapon.hpp"
+#ifndef RADSCORPION_H
+# define RADSCORPION_H
+# include "Enemy.hpp"
 # include <string>
 
-class PlasmaRifle : public AWeapon
+class RadScorpion : public Enemy
 {
 	public:
-		PlasmaRifle();
-		PlasmaRifle(PlasmaRifle const &);
-		~PlasmaRifle();
-		void				operator=(PlasmaRifle const &);
-		virtual void		attack() const;
+		RadScorpion();
+		RadScorpion(RadScorpion const &);
+		~RadScorpion();
+		void				operator=(RadScorpion const &);
 };
 
 #endif

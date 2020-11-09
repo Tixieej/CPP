@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PlasmaRifle.cpp                                    :+:    :+:            */
+/*   PowerFist.cpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/08 15:46:21 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:27:09 by rde-vrie      ########   odam.nl         */
+/*   Created: 2020/11/09 09:04:22 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2020/11/09 17:26:53 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
+#include "PowerFist.hpp"
 #include <string>
 #include <iostream>
 #include <cmath>
 
-PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
+PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 {
 }
 
-PlasmaRifle::PlasmaRifle(PlasmaRifle const &copy) : AWeapon(copy)
+PowerFist::PowerFist(PowerFist const &copy) : AWeapon(copy)
 {
-	std::cout << "Copy PlasmaRifle " << copy.getName() << std::endl;
+	std::cout << "Copy PowerFist " << copy.getName() << std::endl;
 }
 
-PlasmaRifle::~PlasmaRifle()
+PowerFist::~PowerFist()
 {
-	std::cout << "PlasmaRifle destructed" << std::endl;
+	std::cout << "PowerFist destructed" << std::endl;
 }
 
-
-
-void				PlasmaRifle::attack() const
+void				PowerFist::attack(void) const
 {
-	std::cout << "* piouuu piouuu piouuu *" << std::endl;
+	std::cout << "* pschhh... SBAM! *" << std::endl;
 }
 
-void				PlasmaRifle::operator=(PlasmaRifle const &src)
+void				PowerFist::operator=(PowerFist const &src)
 {
 	this->_name = src.getName();
 	this->_apcost = src.getAPCost();
