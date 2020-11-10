@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 09:35:50 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/10 10:30:14 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/10 14:45:43 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,12 @@ int		main(void)
 	scav1.takeDamage(120);
 	std::cout << std::endl;
 
-std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
+	std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
+	std::cout << std::endl;
+
+	ClapTrap clap("Frenkie");
+
+	std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
 	std::cout << std::endl;
 	
 	NinjaTrap ninja1("Ninja");
@@ -119,18 +124,17 @@ std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´�
 	ninja1.takeDamage(40);
 	ninja1.beRepaired(70);
 	std::cout << std::endl;
-
-	ninja1.ninjaShoebox("Jonas");
-	ninja1.ninjaShoebox("Remco");
-	ninja1.ninjaShoebox("Boris");
-	ninja1.ninjaShoebox("Ingmar");
-	ninja1.ninjaShoebox("Mark");
+	
+	ninja1.ninjaShoebox(robot);
+	ninja1.ninjaShoebox(scav1);
+	ninja1.ninjaShoebox(clap);
+	ninja1.ninjaShoebox(ninja1);
 	std::cout << std::endl;
 	
 	ninja1.takeDamage(120);
 	std::cout << std::endl;
 
-std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
+	std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
 	std::cout << std::endl;
 
 	SuperTrap superTest;	
@@ -155,11 +159,10 @@ std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´�
 	super1.beRepaired(70);
 	std::cout << std::endl;
 
-	super1.ninjaShoebox("Jonas");
-	super1.ninjaShoebox("Remco");
-	super1.ninjaShoebox("Boris");
-	super1.ninjaShoebox("Ingmar");
-	super1.ninjaShoebox("Mark");
+	super1.ninjaShoebox(robot);
+	super1.ninjaShoebox(scav1);
+	super1.ninjaShoebox(clap);
+	super1.ninjaShoebox(ninja1);
 	std::cout << std::endl;
 
 	super1.vaulthunter_dot_exe("Peter");

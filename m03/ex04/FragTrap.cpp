@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/10 10:31:30 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/10 15:03:10 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,12 @@ void		FragTrap::operator=(FragTrap const &src)
 	this->_rangedAtkDmg = src._rangedAtkDmg;
 	this->_armorDmgRed = src._armorDmgRed;
 	std::cout << "Assignation operator overload to " << this->_name << "." << std::endl;
+}
+
+void		 FragTrap::rangedAttack(std::string const & target)
+{
+	std::cout << "FR4G-TP " << this->_name << " attacks " << target << " at range, causing " << this->_rangedAtkDmg << " points of damage!" << std::endl;
+
 }
 
 void		FragTrap::vaulthunter_dot_exe(std::string const & target)

@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 09:35:50 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/03 11:11:14 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/10 11:59:37 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,13 @@ int		main(void)
 
 std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
 	std::cout << std::endl;
+
+	ClapTrap clap("YoHands");
+	clap.rangedAttack("Frits");
 	
+std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
+	std::cout << std::endl;
+
 	NinjaTrap ninja1("Ninja");
 	NinjaTrap ninja2("Assassin");
 	NinjaTrap ninjaCopy(ninja2);
@@ -117,11 +123,10 @@ std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´�
 	ninja1.beRepaired(70);
 	std::cout << std::endl;
 
-	ninja1.ninjaShoebox("Jonas");
-	ninja1.ninjaShoebox("Remco");
-	ninja1.ninjaShoebox("Boris");
-	ninja1.ninjaShoebox("Ingmar");
-	ninja1.ninjaShoebox("Mark");
+	ninja1.ninjaShoebox(robot);
+	ninja1.ninjaShoebox(scav1);
+	ninja1.ninjaShoebox(clap);
+	ninja1.ninjaShoebox(ninja1);
 	std::cout << std::endl;
 	
 	ninja1.takeDamage(120);

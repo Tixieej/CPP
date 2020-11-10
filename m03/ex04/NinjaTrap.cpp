@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 10:42:15 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/10 10:24:42 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/10 15:06:09 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,23 +66,51 @@ void		NinjaTrap::operator=(NinjaTrap const &src)
 	std::cout << "Assignation operator overload to " << this->_name << "." << std::endl;
 }
 
-void		NinjaTrap::ninjaShoebox(std::string const & target)
+void		NinjaTrap::meleeAttack(std::string const & target)
+{
+	std::cout << "INAC " << this->_name << " does " << this->_meleeAtkDmg << " points of damage to " << target << " with a melee attack!" << std::endl;
+}
+
+void		NinjaTrap::ninjaShoebox(FragTrap const & target)
 {
 	if (this->_energy < 25)
-		std::cout << "INAC " << this->_name << " tries to aim at " << target << ", but is out of energy." << std::endl;
+		std::cout << "INAC " << this->_name << " tries to aim at FragTrap " << target.getName() << ", but is out of energy." << std::endl;
 	else
 	{
 		this->_energy -= 25;
-		int rn;
+		std::cout << "INAC " << this->_name << " aims a banana at FragTrap " << target.getName() << "." << std::endl;
+	}
+}
 
-		rn = rand() % 6;
-		std::string shoebox[6] = {
-			"a Banana",
-			"a Shotgun",
-			"a Sock",
-			"a Pistol",
-			"Shuriken",
-			"a Katana"};
-		std::cout << "INAC " << this->_name << " aims " <<  shoebox[rn] << " at " << target << "." << std::endl;
+void		NinjaTrap::ninjaShoebox(ScavTrap const & target)
+{
+	if (this->_energy < 25)
+		std::cout << "INAC " << this->_name << " tries to aim at ScavTrap " << target.getName() << ", but is out of energy." << std::endl;
+	else
+	{
+		this->_energy -= 25;
+		std::cout << "INAC " << this->_name << " aims a sock at ScavTrap " << target.getName() << "." << std::endl;
+	}
+}
+
+void		NinjaTrap::ninjaShoebox(ClapTrap const & target)
+{
+	if (this->_energy < 25)
+		std::cout << "INAC " << this->_name << " tries to aim at ClapTrap " << target.getName() << ", but is out of energy." << std::endl;
+	else
+	{
+		this->_energy -= 25;
+		std::cout << "INAC " << this->_name << " aims shuriken at ClapTrap " << target.getName() << "." << std::endl;
+	}
+}
+
+void		NinjaTrap::ninjaShoebox(NinjaTrap const & target)
+{
+	if (this->_energy < 25)
+		std::cout << "INAC " << this->_name << " tries to aim at NinjaTrap " << target.getName() << ", but is out of energy." << std::endl;
+	else
+	{
+		this->_energy -= 25;
+		std::cout << "INAC " << this->_name << " aims some spaghetti at NinjaTrap " << target.getName() << "." << std::endl;
 	}
 }
