@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 11:09:08 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/02 11:48:03 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 09:54:41 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 class ScavTrap
 {
 	public:
+		ScavTrap(void);
 		ScavTrap(std::string);
 		ScavTrap(ScavTrap const &);
 		~ScavTrap();

@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 10:42:15 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/07 14:38:09 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 10:24:42 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,17 @@
 #include <string>
 #include <iostream>
 
-NinjaTrap::NinjaTrap() : ClapTrap()
+NinjaTrap::NinjaTrap(void) : ClapTrap()
 {
-	std::cout << "Default Ninjatrap Constructor" << std::endl;
+	std::cout << "Anonymous INAC: Viva la Robolution!" << std::endl;
+	this->_HP = 60;
+	this->_maxHP = 60;
+	this->_energy = 120;
+	this->_maxEnergy = 120;
+	this->_level = 1;
+	this->_meleeAtkDmg = 60;
+	this->_rangedAtkDmg = 5;
+	this->_armorDmgRed = 0;
 }
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)

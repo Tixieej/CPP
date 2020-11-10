@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 15:03:59 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/07 14:09:53 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 09:37:52 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 class FragTrap : public virtual ClapTrap
 {
 	public:
-		FragTrap();
+		FragTrap(void);
 		FragTrap(std::string);
 		FragTrap(FragTrap const &);
 		~FragTrap();

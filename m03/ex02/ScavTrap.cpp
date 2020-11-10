@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 09:39:05 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/03 09:56:28 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/10 10:03:18 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 #include "ScavTrap.hpp"
 #include <string>
 #include <iostream>
+
+ScavTrap::ScavTrap() : ClapTrap()
+{
+	std::cout << "Anonymous SC4V-TP: Let's get this party started!" << std::endl;
+	this->_HP = 100;
+	this->_maxHP = 100;
+	this->_energy = 50;
+	this->_maxEnergy = 50;
+	this->_level = 1;
+	this->_meleeAtkDmg = 20;
+	this->_rangedAtkDmg = 15;
+	this->_armorDmgRed = 3;
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {

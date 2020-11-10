@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/03 13:33:33 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/09 17:08:55 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 10:27:33 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 SuperTrap::SuperTrap(void)
 {
-	std::cout << "SUP3R-TP default: Hello, I am a combination." << std::endl;
+	std::cout << "Anonymous SUP3R-TP: Hello, I am a combination." << std::endl;
 	this->_HP = this->FragTrap::_HP;
 	this->_maxHP = this->FragTrap::_maxHP;
 	this->_energy = this->NinjaTrap::_energy;

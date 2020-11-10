@@ -6,13 +6,26 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/02 13:29:14 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/03 10:32:13 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/10 10:04:41 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include <string>
 #include <iostream>
+
+ClapTrap::ClapTrap() : _name()
+{
+	std::cout << "--> Anonymous CL4P-TP is constructed: " << std::endl;
+	this->_HP = 0;
+	this->_maxHP = 0;
+	this->_energy = 0;
+	this->_maxEnergy = 0;
+	this->_level = 1;
+	this->_meleeAtkDmg = 0;
+	this->_rangedAtkDmg = 0;
+	this->_armorDmgRed = 0;
+}
 
 ClapTrap::ClapTrap(std::string name) : _name(name)
 {

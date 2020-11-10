@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/02 11:58:14 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 09:56:04 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,22 @@
 #include <string>
 #include <iostream>
 
+FragTrap::FragTrap(void) : _name()
+{
+	std::cout << "--> Anonymous FR4G-TP: Look out everybody! Things are about to get awesome!" << std::endl;
+	this->_HP = 100;
+	this->_maxHP = 100;
+	this->_energy = 100;
+	this->_maxEnergy = 100;
+	this->_level = 1;
+	this->_meleeAtkDmg = 30;
+	this->_rangedAtkDmg = 20;
+	this->_armorDmgRed = 5;
+}
+
 FragTrap::FragTrap(std::string name) : _name(name)
 {
-	std::cout << "FR4G-TP " << name << " is constructed." << std::endl;
+	std::cout << "--> FR4G-TP " << name << ": Look out everybody! Things are about to get awesome!" << std::endl;
 	this->_HP = 100;
 	this->_maxHP = 100;
 	this->_energy = 100;

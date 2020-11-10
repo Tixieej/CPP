@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/01 09:35:50 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/07 14:36:52 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 10:30:14 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		main(void)
 {
 	
 	srand (time(NULL));
+	FragTrap fragTest;
 	FragTrap robot("Robot");
 	FragTrap jaap("Jaap");
 	FragTrap copy(jaap);
@@ -61,6 +62,7 @@ int		main(void)
 	std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
 	std::cout << std::endl;
 	
+	ScavTrap scavTest;
 	ScavTrap scav1("Machine");
 	ScavTrap scav2("Floris");
 	ScavTrap scavCopy(scav2);
@@ -130,7 +132,8 @@ std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´�
 
 std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
 	std::cout << std::endl;
-	
+
+	SuperTrap superTest;	
 	SuperTrap super1("Tramp");
 	SuperTrap super2("Man");
 	SuperTrap superCopy(super2);

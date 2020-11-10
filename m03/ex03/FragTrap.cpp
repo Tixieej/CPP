@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/07 11:00:54 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 10:06:24 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 #include "FragTrap.hpp"
 #include <string>
 #include <iostream>
+
+FragTrap::FragTrap(void) : ClapTrap()
+{
+	std::cout << "Anonymous FR4G-TP: Look out everybody! Things are about to get awesome!" << std::endl;
+	this->_HP = 100;
+	this->_maxHP = 100;
+	this->_energy = 100;
+	this->_maxEnergy = 100;
+	this->_level = 1;
+	this->_meleeAtkDmg = 30;
+	this->_rangedAtkDmg = 20;
+	this->_armorDmgRed = 5;
+}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {

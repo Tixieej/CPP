@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/27 14:47:43 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/08 13:12:54 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 10:31:30 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@
 
 FragTrap::FragTrap(void) : ClapTrap()
 {
-	std::cout << "Default Fragtrap Constructor" << std::endl;
+	std::cout << "Anonymous FR4G-TP: Look out everybody! Things are about to get awesome!" << std::endl;
+	this->_HP = 100;
+	this->_maxHP = 100;
+	this->_energy = 100;
+	this->_maxEnergy = 100;
+	this->_level = 1;
+	this->_meleeAtkDmg = 30;
+	this->_rangedAtkDmg = 20;
+	this->_armorDmgRed = 5;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
@@ -83,7 +91,8 @@ void		FragTrap::vaulthunter_dot_exe(std::string const & target)
 			"Blight Bot",
 			"Rubber Ducky",
 			"Senseless Sacrifice",
-			"Medbot"};
+			"Medbot"
+		};
 		std::cout << "FR4G-TP " << this->_name << " sends action package " <<  attacks[rn] << " to " << target << "." << std::endl;
 	}
 }
