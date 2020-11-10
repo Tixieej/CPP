@@ -6,12 +6,13 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 18:23:40 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 18:29:30 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 18:36:57 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SQUAD_H
-# define SQUAD_H
+#ifndef ISQUAD_H
+# define ISQUAD_H
+# include "ISpaceMarine.hpp"
 
 class ISquad
 {

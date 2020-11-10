@@ -6,15 +6,15 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 18:30:00 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 18:32:02 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 19:27:18 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ISpaceMarine.hpp"
+#include "ISquad.hpp"
 #include "Squad.hpp"
 #include "TacticalMarine.hpp"
 #include "AssaultTerminator.hpp"
-#include "ISpaceMarine.hpp"
-#include "ISquad.hpp"
 
 int main()
 {
