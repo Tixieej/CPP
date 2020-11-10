@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 09:47:33 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 18:32:43 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 16:39:36 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 class Enemy
 {
 	public:
-		Enemy();
 		Enemy(int hp, std::string const &type);
 		Enemy(Enemy const &);
 		virtual ~Enemy();
@@ -29,6 +28,8 @@ class Enemy
 	protected:
 		int					_hp;
 		std::string			_type;
+	private:
+		Enemy();
 	};
 
 #endif

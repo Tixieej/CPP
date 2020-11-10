@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 09:04:22 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:26:53 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/10 10:58:43 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <cmath>
 
-PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
+PowerFist::PowerFist(void) : AWeapon("Power Fist", 8, 50)
 {
 }
 
