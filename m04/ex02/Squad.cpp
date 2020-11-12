@@ -6,14 +6,14 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 18:19:36 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/12 11:45:44 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/12 15:08:57 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Squad.hpp"
 #include <iostream>
 
-Squad::Squad() : ISquad()
+Squad::Squad(void) : ISquad()
 {
 	this->_squadCount = 0;
 	this->_squadList = NULL;
@@ -33,14 +33,13 @@ Squad::~Squad()
 
 Squad				&Squad::operator=(Squad const &src)
 {
-	// a = b, this = a, src = b
-	// delete old units from a
+	// delete old units from this
 	if (this->_squadCount > 0)
 		this->deleteUnits();
 	// make new squadlist with right amount of marines
 	this->_squadCount = src._squadCount;
 	this->_squadList = new ISpaceMarine*[this->_squadCount];
-	// copy all units from src to a
+	// copy all units from src to this
 	for (int i = 0; i < src.getCount(); i++)
 		this->_squadList[i] = src.getUnit(i)->clone();
 	return (*this);
