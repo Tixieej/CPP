@@ -6,14 +6,16 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:07:40 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/12 16:26:32 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/12 17:16:07 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_H
 # define ICHARACTER_H
-//# include "AMateria.hpp"
+# include "AMateria.hpp"
 # include <string>
+
+class	AMateria; //forward declaration to stop cyclic includes
 
 class ICharacter
 {

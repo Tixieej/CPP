@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 13:54:31 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/12 15:29:22 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/12 17:22:52 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ Cure		&Cure::operator=(Cure const &rhs)
 {
 	return (*this);
 }
+
+AMateria	*clone() const;
 
 void		Cure::use(ICharacter &target)
 {
