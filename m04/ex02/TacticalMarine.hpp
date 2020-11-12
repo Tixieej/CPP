@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 10:58:58 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/10 17:44:58 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/12 08:46:34 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class TacticalMarine : virtual public ISpaceMarine
 		TacticalMarine(void);
 		TacticalMarine(TacticalMarine const &);
 		~TacticalMarine();
-		void		operator=(TacticalMarine const &);
+		TacticalMarine	&operator=(TacticalMarine const &);
 
 
 //		~ISpaceMarine() {}

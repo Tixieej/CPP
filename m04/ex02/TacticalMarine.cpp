@@ -6,21 +6,22 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 10:53:14 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/10 19:13:43 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/12 11:40:30 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "TacticalMarine.hpp"
 #include <iostream>
 
-TacticalMarine::TacticalMarine(void) : ISpaceMarine()
+TacticalMarine::TacticalMarine(void)// : ISpaceMarine()
 {
 	std::cout << "Tactical Marine ready for battle!" << std::endl;
 }
 
-TacticalMarine::TacticalMarine(TacticalMarine const &copy) : ISpaceMarine(copy)
+TacticalMarine::TacticalMarine(TacticalMarine const &copy) //: ISpaceMarine(copy)
 {
 	std::cout << "Copy Tactical Marine ready for battle!" << std::endl;
+	*this = copy;
 }
 
 TacticalMarine::~TacticalMarine()
@@ -28,17 +29,15 @@ TacticalMarine::~TacticalMarine()
 	std::cout << "Aaargh..." << std::endl;
 }
 
-void		TacticalMarine::operator=(TacticalMarine const &src)
+TacticalMarine		&TacticalMarine::operator=(TacticalMarine const &src)
 {
-//	this->_name = src.getName();
+	return (*this);
 }
-
-//TacticalMarine::~ISpaceMarine() {}
 
 ISpaceMarine*		TacticalMarine::clone() const
 {
-		//returns a copy of the current object
-	return (*this);
+	ISpaceMarine* clone = new TacticalMarine(*this);
+	return (clone);
 }
 
 void				TacticalMarine::battleCry() const

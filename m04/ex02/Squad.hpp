@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 18:12:55 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/10 18:25:26 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/12 11:01:24 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,16 @@ class Squad : public ISquad
 	public:
 		Squad();
 		Squad(Squad const &);
-		virtual					~Squad();
-		Squad&					operator=(Squad const &);
-
-
-		int				getCount() const;
-		ISpaceMarine*	getUnit(int) const;
-		int						push(ISpaceMarine*);
-
-
-	//	static int		getCount(void) const;
+		virtual				~Squad();
+		Squad&				operator=(Squad const &);
+		ISpaceMarine*		getUnit(int) const;
+		int					push(ISpaceMarine*);
+		int					getCount(void) const;
+		void				deleteUnits(void);
 	protected:
 	private:
-	//	static int		_squadCount;
+		int					_squadCount;
+		ISpaceMarine		**_squadList;
 };
 
 #endif

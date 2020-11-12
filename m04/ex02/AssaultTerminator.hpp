@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 17:20:33 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/10 17:44:45 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/12 08:49:43 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ class AssaultTerminator : virtual public ISpaceMarine
 		AssaultTerminator(void);
 		AssaultTerminator(AssaultTerminator const &);
 		~AssaultTerminator();
-		void		operator=(AssaultTerminator const &);
+		AssaultTerminator	&operator=(AssaultTerminator const &);
 
 
 	//	~ISpaceMarine() {}
-		ISpaceMarine*	clone() const;
-		void			battleCry() const;
-		void			rangedAttack() const;
-		void			meleeAttack() const;
+		ISpaceMarine*		clone() const;
+		void				battleCry() const;
+		void				rangedAttack() const;
+		void				meleeAttack() const;
 };
 
 #endif
