@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:13:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:26:29 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/12 14:10:14 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,3 @@ void				AWeapon::operator=(AWeapon const &src)
 	this->_damage = src.getDamage();
 	std::cout << "Assignation operator overload to " << this->_name << "." << std::endl;
 }
-
-//std::ostream		&operator<<(std::ostream &o, AWeapon const &src)
-//{
-//	o << "I am " << src.getName() << ", " << src.getTitle() << " and I like ponies!" << std::endl;
-//	return (o);
-//}

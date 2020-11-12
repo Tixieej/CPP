@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:46:21 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:27:09 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/12 15:29:02 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ PlasmaRifle::~PlasmaRifle()
 {
 	std::cout << "PlasmaRifle destructed" << std::endl;
 }
-
-
 
 void				PlasmaRifle::attack() const
 {

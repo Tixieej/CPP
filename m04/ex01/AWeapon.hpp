@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:01:30 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:30:49 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/12 15:10:55 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ class AWeapon
 		int			 		_apcost;
 		int					_damage;
 };
-//	std::ostream			&operator<<(std::ostream &, AWeapon const &);
 
 #endif
