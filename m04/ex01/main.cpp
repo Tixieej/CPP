@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:00:07 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:34:20 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/20 21:50:03 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
 #include "Character.hpp"
-
+#include "colors.hpp"
 #include <iostream>
 
 int		main(void)
 {
 	/* main test */
 	{
+		std::cout << COLOR_YELLOW;
 		Character* me = new Character("me");
 		std::cout << *me; // me has 40 AP and is unarmed
 		Enemy* b = new RadScorpion(); //* click click click *
@@ -40,10 +41,12 @@ int		main(void)
 		std::cout << *me; //me has 27 AP and wields a Plasma Rifle
 		me->attack(b); //me attacks RadScorpion with a Plasma Rifle
 		std::cout << *me; //me has 22 AP and wields a Plasma Rifle
+		std::cout << COLOR_RESET;
 	}
 	std::cout << "\t================" << std::endl;
 	/* extra tests */
 	{
+		std::cout << COLOR_BLU;
 		AWeapon* plasma = new PlasmaRifle();
 		PlasmaRifle plasma2;
 		PowerFist power;
@@ -60,10 +63,12 @@ int		main(void)
 		power.attack();
 
 		delete(plasma);
+		std::cout << COLOR_RESET;
 	}
 	std::cout << "\t================" << std::endl;
 	{
 		/* SuperMutants have 3 damage reduction */
+		std::cout << COLOR_PURPLE;
 		SuperMutant sm;
 		Enemy* sm2 = new SuperMutant();	
 		std::cout << "HP 1: " << sm.getHP() << std::endl;
@@ -78,10 +83,12 @@ int		main(void)
 		sm2->takeDamage(3);
 		std::cout << "HP 2: "<< sm2->getHP() << std::endl;	
 		delete(sm2);
+		std::cout << COLOR_RESET;
 	}
 	std::cout << "\t================" << std::endl;
 	{
 		/* A copy doesn't take damage if the other does */
+		std::cout << COLOR_PINK;
 		RadScorpion radA;
 		RadScorpion radB;
 
@@ -95,6 +102,7 @@ int		main(void)
 		std::cout << "HP A: " << radA.getHP() << std::endl;
 		std::cout << "HP B: " << radB.getHP() << std::endl;
 		std::cout << "HP C: " << radC.getHP() << std::endl;
+		std::cout << COLOR_RESET;
 	}
 	std::cout << "\t================" << std::endl;
 	
