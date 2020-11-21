@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 09:48:19 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/10 16:39:44 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 14:10:16 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,10 @@ void				Enemy::takeDamage(int dmg)
 		this->_hp -= dmg;
 }
 
-void				Enemy::operator=(Enemy const &src)
+Enemy				&Enemy::operator=(Enemy const &src)
 {
 	this->_hp = src.getHP();
 	this->_type = src.getType();
 	std::cout << "Assignation operator overload." << std::endl;
+	return (*this);
 }

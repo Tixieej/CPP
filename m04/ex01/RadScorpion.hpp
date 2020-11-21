@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 13:19:20 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:17:27 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/21 14:16:52 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class RadScorpion : public Enemy
 		RadScorpion();
 		RadScorpion(RadScorpion const &);
 		~RadScorpion();
-		void				operator=(RadScorpion const &);
+		RadScorpion			&operator=(RadScorpion const &);
 };
 
 #endif

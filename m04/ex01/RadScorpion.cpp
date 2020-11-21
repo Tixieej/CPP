@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 13:18:54 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:04:10 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/21 14:16:38 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ RadScorpion::~RadScorpion()
 	std::cout << "* SPROTCH *" << std::endl;
 }
 
-void				RadScorpion::operator=(RadScorpion const &src)
+RadScorpion			&RadScorpion::operator=(RadScorpion const &src)
 {
 	this->_hp = src.getHP();
 	this->_type = src.getType();
+	return (*this);
 }

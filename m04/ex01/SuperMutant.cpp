@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 10:46:15 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:19:06 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/21 14:17:30 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,9 @@ void				SuperMutant::takeDamage(int dmg)
 		this->_hp += 3 - dmg;
 }
 
-void				SuperMutant::operator=(SuperMutant const &src)
+SuperMutant			&SuperMutant::operator=(SuperMutant const &src)
 {
 	this->_hp = src.getHP();
 	this->_type = src.getType();
+	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 13:22:40 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 17:35:33 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/21 14:13:15 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Character
 		Character(std::string const &name);
 		Character(Character const &);
 		~Character();
+		Character		&operator=(Character const &);
 		void			recoverAP();
 		void			equip(AWeapon *);
 		void			attack(Enemy *);

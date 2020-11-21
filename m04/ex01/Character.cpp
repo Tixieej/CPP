@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 13:33:15 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 16:59:58 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/21 14:17:49 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,14 @@ void				Character::recoverAP()
 	this->_ap += 10;
 	if (this->_ap > 40)
 		this->_ap = 40;
+}
+
+Character			&Character::operator=(Character const &src)
+{
+	this->_name = src.getName();
+	this->_ap = src.getAP();
+	this->_weapon = src.getWeapon();
+	return (*this);
 }
 
 void				Character::equip(AWeapon *wpn)

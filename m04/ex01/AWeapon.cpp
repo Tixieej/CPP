@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:13:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/12 14:10:14 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 14:11:33 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,11 @@ int					AWeapon::getDamage(void) const
 	return (this->_damage);
 }
 
-void				AWeapon::operator=(AWeapon const &src)
+AWeapon				&AWeapon::operator=(AWeapon const &src)
 {
 	this->_name = src.getName();
 	this->_apcost = src.getAPCost();
 	this->_damage = src.getDamage();
 	std::cout << "Assignation operator overload to " << this->_name << "." << std::endl;
+	return (*this);
 }

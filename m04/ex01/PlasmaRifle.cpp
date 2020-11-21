@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:46:21 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/12 15:29:02 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 14:08:29 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ void				PlasmaRifle::attack() const
 	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }
 
-void				PlasmaRifle::operator=(PlasmaRifle const &src)
+PlasmaRifle			&PlasmaRifle::operator=(PlasmaRifle const &src)
 {
 	this->_name = src.getName();
 	this->_apcost = src.getAPCost();
 	this->_damage = src.getDamage();
+	return (*this);
 }

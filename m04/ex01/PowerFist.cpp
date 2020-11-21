@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 09:04:22 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/10 10:58:43 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 14:09:22 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,10 @@ void				PowerFist::attack(void) const
 	std::cout << "* pschhh... SBAM! *" << std::endl;
 }
 
-void				PowerFist::operator=(PowerFist const &src)
+PowerFist			&PowerFist::operator=(PowerFist const &src)
 {
 	this->_name = src.getName();
 	this->_apcost = src.getAPCost();
 	this->_damage = src.getDamage();
+	return (*this);
 }
