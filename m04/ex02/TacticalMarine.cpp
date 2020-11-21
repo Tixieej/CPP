@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 10:53:14 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/12 13:39:01 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 14:21:03 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ TacticalMarine::~TacticalMarine()
 
 TacticalMarine		&TacticalMarine::operator=(TacticalMarine const &src)
 {
+	(void)src;
 	return (*this);
 }
 

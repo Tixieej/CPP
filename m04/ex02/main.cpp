@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 18:30:00 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/12 11:45:19 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 14:28:14 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 #include "Squad.hpp"
 #include "TacticalMarine.hpp"
 #include "AssaultTerminator.hpp"
-# include <iostream>
+#include "colors.hpp"
+#include <iostream>
 
 int main()
 {
+	std::cout << COLOR_PINK;
 	ISpaceMarine	*bob = new TacticalMarine();
 	ISpaceMarine	*jim = new AssaultTerminator();
 
@@ -34,10 +36,11 @@ int main()
 	}
 	delete vlc;
 
-std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
+	std::cout << COLOR_RESET;
+	std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
 
 	// Other tests:
-
+	std::cout << COLOR_RED;
 	std::cout << ">>> Creating a new squad with 5 units." << std::endl;
 	Squad			*squad1 = new Squad();
 	for (int i = 0; i < 5; i++)
@@ -54,6 +57,7 @@ std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´�
 	std::cout << ">>> Done copying, deleting the old squad." << std::endl;
 	delete squad1;
 
+	std::cout << COLOR_ORANGE;
 	std::cout << ">>> Doing a battle cry from a unit of the copied squad." << std::endl;
 	squad2->getUnit(2)->battleCry();
 	std::cout << ">>> Deleting the copied squad." << std::endl;
@@ -68,6 +72,7 @@ std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´�
 	{
 		squad2->push(new TacticalMarine());
 	}
+	std::cout << COLOR_YELLOW;
 	std::cout << ">>> Assigning squad 1 to squad 2." << std::endl;
 	*squad2 = *squad1;
 	std::cout << ">>> Deleting both squads, copies with identical units." << std::endl;
@@ -79,7 +84,8 @@ std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´�
 	squad1 = 0;
 	squad2 = 0;
 	// If you want to check for leaks, uncomment the next line
-	// while(1);
+	//while(1);
 
+	std::cout << COLOR_RESET;
 	return 0;
 }

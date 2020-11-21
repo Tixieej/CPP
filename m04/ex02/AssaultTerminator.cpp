@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/10 17:21:48 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/12 14:15:33 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 14:41:46 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,9 @@ AssaultTerminator::~AssaultTerminator()
 
 AssaultTerminator		&AssaultTerminator::operator=(AssaultTerminator const &src)
 {
-//	this->_name = src.getName();
+	(void) src;
 	return (*this);
 }
-
-//AssaultTerminator::~ISpaceMarine() {}
 
 ISpaceMarine*			AssaultTerminator::clone() const
 {
