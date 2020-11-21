@@ -6,18 +6,20 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 14:06:22 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/09 13:09:24 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/21 13:11:25 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
+#include "colors.hpp"
 
 int main(void)
 {
 	/* test main */
 	{
+		std::cout << COLOR_GREEN;
 		Sorcerer robert("Robert", "the Magnificent");
 		Victim jim("Jimmy");
 		Peon joe("Joe");
@@ -25,10 +27,12 @@ int main(void)
 		robert.polymorph(jim);
 		robert.polymorph(joe);
 	}
+	std::cout << COLOR_RESET;
 	std::cout << "\t•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•*´¨`*•.¸¸.•" << std::endl;
 	/* extra tests */
 	{
 		/* constructors */
+		std::cout << COLOR_BLUE;
 		Sorcerer	gandalf("Gandalf", "the Grey");
 		Sorcerer	merlin = gandalf;
 		Sorcerer	dumbledore(merlin);
@@ -45,9 +49,11 @@ int main(void)
 		Peon		paula(person);
 
 		/* operators */
+		std::cout << COLOR_PURPLE;
 		std::cout << std::endl << gandalf << bert << merlin << paula << *vic << std::endl;
 
 		/* functions */
+		std::cout << COLOR_PINK;
 		merlin.polymorph(bert);
 		gandalf.polymorph(frans);
 		dumbledore.polymorph(ans);
@@ -57,8 +63,10 @@ int main(void)
 		vic->getName();
 
 		/* destructors */
+		std::cout << COLOR_YELLOW;
 		delete(vic);
 		std::cout << std::endl;
+		std::cout << COLOR_RESET;
 	}
 	return 0;
 }
