@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/20 21:53:23 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 13:35:07 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
 #include "colors.hpp"
+#include <iostream>
 
 int main()
 {

@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 14:21:58 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/12 15:29:45 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/21 14:31:11 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Ice::~Ice(void)
 
 Ice		&Ice::operator=(Ice const &rhs)
 {
+	(void) src;
 	return (*this);
 }
 
