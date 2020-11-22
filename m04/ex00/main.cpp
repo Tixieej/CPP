@@ -6,13 +6,14 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 14:06:22 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/21 13:11:25 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/22 12:49:26 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "Victim.hpp"
 #include "Peon.hpp"
+#include "Dwarf.hpp"
 #include "colors.hpp"
 
 int main(void)
@@ -48,9 +49,14 @@ int main(void)
 		Peon		person = peter;
 		Peon		paula(person);
 
+		Dwarf		gimli("Gimli");
+		Victim*		oin = new Dwarf("Oin");
+		Dwarf		gloin = gimli;
+		Dwarf		kili(gimli);
+
 		/* operators */
 		std::cout << COLOR_PURPLE;
-		std::cout << std::endl << gandalf << bert << merlin << paula << *vic << std::endl;
+		std::cout << std::endl << gandalf << bert << merlin << paula << *vic << gimli << std::endl;
 
 		/* functions */
 		std::cout << COLOR_PINK;
@@ -61,12 +67,17 @@ int main(void)
 		gandalf.polymorph(person);
 		dumbledore.polymorph(peter);
 		vic->getName();
+		gandalf.polymorph(gimli);
+		dumbledore.polymorph(kili);
 
 		/* destructors */
 		std::cout << COLOR_YELLOW;
 		delete(vic);
+		delete(oin);
 		std::cout << std::endl;
 		std::cout << COLOR_RESET;
 	}
+	// uncomment to check for leaks:
+	// while (1);
 	return 0;
 }
