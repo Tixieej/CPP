@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 13:54:31 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/12 17:22:52 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/22 11:29:27 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ Cure::~Cure(void)
 {
 }
 
-Cure		&Cure::operator=(Cure const &rhs)
+Cure			&Cure::operator=(Cure const &rhs)
 {
 	return (*this);
 }
 
-AMateria	*clone() const;
+AMateria		Cure::*clone() const;
 
-void		Cure::use(ICharacter &target)
+void			Cure::use(ICharacter &target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
-}
+

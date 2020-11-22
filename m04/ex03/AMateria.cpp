@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 11:58:56 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/21 14:41:44 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/22 11:29:25 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,6 @@ void					AMateria::use(ICharacter& target)
 	//xp increasing by 10 upon every call to this function
 //Regarding the use(ICharacter&) method, it’ll display:
 //• Ice: "* shoots an ice bolt at NAME *"
-//• Cure: "* heals NAME’s wounds *"
+//• Cure: "* heals NAME’s wounds *
 //(Of course, replace NAME by the name of the Character given as parameter.)
 }

@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/09 09:05:46 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/21 14:09:36 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/22 11:26:38 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PowerFist : public AWeapon
 	public:
 		PowerFist(void);
 		PowerFist(PowerFist const &);
-		~PowerFist();
+		virtual ~PowerFist();
 		PowerFist			&operator=(PowerFist const &);
 		virtual void		attack() const;
 };

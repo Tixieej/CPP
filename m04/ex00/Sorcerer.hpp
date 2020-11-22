@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 10:18:47 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/08 11:26:44 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/22 11:23:14 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Sorcerer
 	public:
 		Sorcerer(std::string, std::string);
 		Sorcerer(Sorcerer const &);
-		~Sorcerer();
+		virtual ~Sorcerer();
 		void			operator=(Sorcerer const &);
 		std::string		getName(void) const;
 		std::string		getTitle(void) const;

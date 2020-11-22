@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 13:35:59 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/12 16:37:43 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/22 11:28:27 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Character : virtual public ICharacter
 		Character(void);
 		Character(std::string);
 		Character(Character &copy);
-		~Character(void);
+		virtual ~Character(void);
 		Character			&operator=(Character const &);
 		std::string const 	&getName() const;
 		void				equip(AMateria* m);

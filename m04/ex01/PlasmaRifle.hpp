@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:43:43 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/21 14:08:46 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2020/11/22 11:26:25 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class PlasmaRifle : public AWeapon
 	public:
 		PlasmaRifle();
 		PlasmaRifle(PlasmaRifle const &);
-		~PlasmaRifle();
+		virtual ~PlasmaRifle();
 		PlasmaRifle			&operator=(PlasmaRifle const &);
 		virtual void		attack() const;
 };

@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 13:49:17 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/12 17:22:49 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/22 11:28:38 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cure : public AMateria
 	public:
 		Cure(void);
 		Cure(Cure const &);
-		~Cure(void);
+		virtual ~Cure(void);
 		Cure				&operator=(Cure const &);
 		virtual AMateria	*clone() const; // deze moet wsl hier apart gedefined worden
 		virtual void		use(ICharacter &target);
