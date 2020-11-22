@@ -6,16 +6,18 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/08 15:00:07 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2020/11/20 21:50:03 by rixt          ########   odam.nl         */
+/*   Updated: 2020/11/22 14:33:39 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AWeapon.hpp"
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
+#include "Bow.hpp"
 #include "Enemy.hpp"
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
+#include "Voldemort.hpp"
 #include "Character.hpp"
 #include "colors.hpp"
 #include <iostream>
@@ -63,6 +65,30 @@ int		main(void)
 		power.attack();
 
 		delete(plasma);
+		std::cout << COLOR_RESET;
+	}
+	std::cout << "\t================" << std::endl;
+	{
+		std::cout << COLOR_ORANGE;
+		std::cout << "Test for my own weapon and enemy" << std::endl;
+		Character rixt("Rixt");
+		AWeapon* bow = new Bow();
+		Bow	bow2;
+		Voldemort tom;
+
+		std::cout << bow->getName() << std::endl;
+		std::cout << bow->getAPCost() << std::endl;
+		std::cout << bow->getDamage() << std::endl;
+
+		rixt.equip(bow);
+		rixt.attack(&tom);
+		rixt.attack(&tom);
+
+		std::cout << rixt;
+
+		bow->attack();
+
+		delete(bow);
 		std::cout << COLOR_RESET;
 	}
 	std::cout << "\t================" << std::endl;
