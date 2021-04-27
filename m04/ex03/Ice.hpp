@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 14:20:25 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/22 11:28:54 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/04/27 11:58:56 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Ice : public AMateria
 		Ice(Ice const &);
 		virtual ~Ice(void);
 		Ice	&operator=(Ice const &);
-		virtual AMateria*	clone() const; // deze moet wsl hier apart gedefined worden
+		virtual Ice*	clone() const; // deze moet wsl hier apart gedefined worden
 		virtual void	use(ICharacter &target);
 };
 

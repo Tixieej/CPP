@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 11:58:56 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/22 11:29:25 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/04/27 11:24:46 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ AMateria::AMateria(std::string const & type) : _type(type), _xp(0)
 {
 }
 
-AMateria::AMateria(AMateria const & copy)
-{
-	std::cout << "copy" << std::endl;
-}
+//AMateria::AMateria(AMateria const & copy)
+//{
+//	std::cout << "copy is: " << std::endl;
+//}
 
 AMateria::~AMateria(void)
 {
@@ -36,7 +36,7 @@ AMateria				&AMateria::operator=(AMateria const &src)
 	return (*this);
 }
 
-std::string const		&AMateria::getType() const; //Returns the materia type
+std::string const		&AMateria::getType() const //Returns the materia type
 {
 	return (this->_type);
 }
@@ -46,17 +46,17 @@ unsigned int			AMateria::getXP() const //Returns the Materia's XP
 	return (this->_xp);
 }
 
-AMateria*				AMateria::clone() const
-{
-	AMateria* clone = new AMateria(*this);
-	return (clone);
-}
+//AMateria*				AMateria::clone() const
+//{
+//	AMateria* clone = new Ice or Cure(*this);
+//	return (clone);
+//}
 
-void					AMateria::use(ICharacter& target)
-{
+//void					AMateria::use(ICharacter& target)
+//{
 	//xp increasing by 10 upon every call to this function
 //Regarding the use(ICharacter&) method, it’ll display:
 //• Ice: "* shoots an ice bolt at NAME *"
 //• Cure: "* heals NAME’s wounds *
 //(Of course, replace NAME by the name of the Character given as parameter.)
-}
+//}

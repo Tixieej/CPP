@@ -6,12 +6,12 @@
 #    By: rde-vrie <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/31 10:56:55 by rde-vrie      #+#    #+#                  #
-#    Updated: 2020/11/21 14:28:53 by rde-vrie      ########   odam.nl          #
+#    Updated: 2021/04/27 11:44:45 by rde-vrie      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex03
-OBJ = main.o AMateria.o #Ice.o Cure.o Character.o MateriaSource.o
+OBJ = main.o AMateria.o Ice.o Cure.o Character.o MateriaSource.o
 CC = clang++
 FLAGS = -Wall -Werror -Wextra -std=c++98
 INC = colors.hpp AMateria.hpp Ice.hpp Cure.hpp Character.hpp MateriaSource.hpp ICharacter.hpp IMateriaSource.hpp

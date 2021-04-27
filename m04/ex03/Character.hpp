@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 13:35:59 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/22 11:28:27 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/04/27 10:48:27 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Character : virtual public ICharacter
 {
 	private:
 		std::string			_name;
+		AMateria			*_inv[4];
 
 	public:
 		Character(void);
@@ -31,7 +32,6 @@ class Character : virtual public ICharacter
 		void				equip(AMateria* m);
 		void				unequip(int idx);
 		void				use(int idx, ICharacter &target);
-
 };
 
 #endif

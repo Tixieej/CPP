@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 11:53:21 by rixt          #+#    #+#                 */
-/*   Updated: 2020/11/21 14:40:13 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/04/27 12:56:35 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 # define AMATERIA_H
 # include "ICharacter.hpp"
 # include <string>
+# include <iostream>
 
 class	ICharacter; //forward declaration to stop cyclic includes
 
 class AMateria
 {
-	private:
+	protected:
 		std::string				_type;
 		unsigned int			_xp;
 
