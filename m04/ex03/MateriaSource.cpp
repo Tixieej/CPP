@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 14:23:12 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/13 10:54:33 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/13 16:40:00 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,16 +41,16 @@ AMateria	*MateriaSource::createMateria(std::string const & type)//k heb gelooped
 //dan return ik een clone daarvan
 //ja in je MateriaSource stop je shit, waarna je ze kunt kopieren dmv createMateria
 {
-	AMateria *flup;
+	AMateria *created;
 	if (type == "cure")
 	{
-		flup = new Cure();
+		created = new Cure();
 	}
 	else //(type == "ice")
 	{
-		flup = new Ice();
+		created = new Ice();
 	}
 	//AMateria copy(type);
 	std::cout << "create " << type << std::endl;
-	return (flup);
+	return (created);
 }
