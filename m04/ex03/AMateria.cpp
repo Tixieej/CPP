@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 11:58:56 by rixt          #+#    #+#                 */
-/*   Updated: 2021/04/27 11:24:46 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/13 14:22:01 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ AMateria::AMateria(std::string const & type) : _type(type), _xp(0)
 {
 }
 
-//AMateria::AMateria(AMateria const & copy)
-//{
-//	std::cout << "copy is: " << std::endl;
-//}
+AMateria::AMateria(AMateria const & copy)
+{
+	std::cout << "copy type is: " << copy.getType() << std::endl;
+	*this = copy;
+}
 
 AMateria::~AMateria(void)
 {
+	std::cout << "destroy " << this->_type << std::endl;
 }
 
 AMateria				&AMateria::operator=(AMateria const &src)
@@ -52,11 +54,14 @@ unsigned int			AMateria::getXP() const //Returns the Materia's XP
 //	return (clone);
 //}
 
-//void					AMateria::use(ICharacter& target)
-//{
-	//xp increasing by 10 upon every call to this function
+void					AMateria::use(ICharacter& target)
+{
+//xp increasing by 10 upon every call to this function
 //Regarding the use(ICharacter&) method, it’ll display:
 //• Ice: "* shoots an ice bolt at NAME *"
 //• Cure: "* heals NAME’s wounds *
 //(Of course, replace NAME by the name of the Character given as parameter.)
-//}
+	this->_xp += 10;
+	std::cout << "use " << target.getName() << " ";
+	std::cout << " current xp: " << this->_xp << std::endl;
+}

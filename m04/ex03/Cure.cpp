@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 13:54:31 by rixt          #+#    #+#                 */
-/*   Updated: 2021/04/27 13:02:44 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/13 14:26:41 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Cure			&Cure::operator=(Cure const &rhs)
 	return (*this);
 }
 
-Cure*		Cure::clone() const // dit klopt niet, maar eerst zorgen dat het compiled
+Cure*		Cure::clone() const
 {
 	Cure *clone = new Cure(*this);
 	return (clone);
@@ -40,4 +40,5 @@ Cure*		Cure::clone() const // dit klopt niet, maar eerst zorgen dat het compiled
 void			Cure::use(ICharacter &target)
 {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+	AMateria::use(target);
 }
