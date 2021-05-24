@@ -6,7 +6,7 @@
 /*   By: akramp <akramp@student.codam.nl>             +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/09/22 08:23:26 by akramp        #+#    #+#                 */
-/*   Updated: 2020/11/22 13:52:13 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/24 11:32:47 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,7 @@
 # define COLOR_YELLOW	"\033[38;5;221m"
 # define COLOR_PINK		"\033[38;5;205m"
 # define COLOR_ORANGE	"\033[38;5;172m"
+# define COLOR_GREEN	"\033[38;5;120m"
+
 
 #endif
