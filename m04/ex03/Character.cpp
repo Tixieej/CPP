@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 15:46:33 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/24 14:38:29 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/24 14:45:13 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ Character::~Character(void)
 
 Character	&Character::operator=(Character const &rhs)//is this deep assignation?
 {
-
 	this->_name = rhs.getName();
 	//inventory ook !!!! copy aanroepen?
 	return (*this);
@@ -115,7 +114,7 @@ void				Character::use(int idx, ICharacter &target)
 		this->_inv[idx]->use(target);
 	}
 	else
-		std::cout << "You can't use that" << std::endl;
+		std::cout << this->_name << ", you can't use that" << std::endl;
 	//std::cout << idx << std::endl;
 	//this->_name = target.getName();
 }

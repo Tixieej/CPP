@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/24 14:28:55 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/24 14:45:17 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ int	main()
 
 	std::cout << COLOR_YELLOW;
 	// ICharacter tests
+	me->use(0, *remco);
 	me->equip(ijsje);
 	me->equip(ijsje);
 	me->unequip(2);
