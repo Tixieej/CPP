@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 14:21:58 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/13 14:00:02 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/24 11:40:37 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Ice		&Ice::operator=(Ice const &rhs)
 
 Ice*	Ice::clone() const
 {
-	Ice *clone = new Ice(*this);
+	Ice *clone = new Ice(*this); // this is a deep copy
 	return (clone);
 }
 

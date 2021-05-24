@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 11:53:21 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/13 14:23:06 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/24 13:42:07 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class AMateria
 		AMateria				&operator=(AMateria const &);
 		std::string const 		&getType() const; //Returns the materia type
 		unsigned int			getXP() const; //Returns the Materia's XP
-//		virtual AMateria*		clone() const = 0;
+		virtual AMateria*		clone() const = 0;
 		virtual void			use(ICharacter &target);
 };
 

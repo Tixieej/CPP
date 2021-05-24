@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 11:58:56 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/13 14:22:01 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/05/24 11:29:45 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,8 @@ unsigned int			AMateria::getXP() const //Returns the Materia's XP
 	return (this->_xp);
 }
 
-//AMateria*				AMateria::clone() const
-//{
-//	AMateria* clone = new Ice or Cure(*this);
-//	return (clone);
-//}
-
 void					AMateria::use(ICharacter& target)
 {
-//xp increasing by 10 upon every call to this function
-//Regarding the use(ICharacter&) method, it’ll display:
-//• Ice: "* shoots an ice bolt at NAME *"
-//• Cure: "* heals NAME’s wounds *
-//(Of course, replace NAME by the name of the Character given as parameter.)
 	this->_xp += 10;
-	std::cout << "use " << target.getName() << " ";
-	std::cout << " current xp: " << this->_xp << std::endl;
+	(void)target;
 }
