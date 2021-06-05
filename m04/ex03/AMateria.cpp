@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 11:58:56 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/24 11:29:45 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/06/05 15:08:17 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ AMateria::AMateria(std::string const & type) : _type(type), _xp(0)
 
 AMateria::AMateria(AMateria const & copy)
 {
-	std::cout << "copy type is: " << copy.getType() << std::endl;
+	std::cout << "Copy type is: " << copy.getType() << "." << std::endl;
 	*this = copy;
 }
 
 AMateria::~AMateria(void)
 {
-	std::cout << "destroy " << this->_type << std::endl;
+	std::cout << "Destroy " << this->_type << "." << std::endl;
 }
 
 AMateria				&AMateria::operator=(AMateria const &src)
@@ -38,12 +38,12 @@ AMateria				&AMateria::operator=(AMateria const &src)
 	return (*this);
 }
 
-std::string const		&AMateria::getType() const //Returns the materia type
+std::string const		&AMateria::getType() const
 {
 	return (this->_type);
 }
 
-unsigned int			AMateria::getXP() const //Returns the Materia's XP
+unsigned int			AMateria::getXP() const
 {
 	return (this->_xp);
 }

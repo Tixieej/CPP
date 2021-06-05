@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 14:23:12 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/13 16:40:00 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/06/05 15:12:00 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 MateriaSource::MateriaSource(void) : IMateriaSource()
 {
-	std::cout << "materiasource inst" << std::endl;
+	for (int i = 0; i < 4; i++)
+		this->_learnedMateria[i] = 0;
 }
 
 MateriaSource::MateriaSource(MateriaSource const &copy)
@@ -29,28 +30,63 @@ MateriaSource::~MateriaSource(void)
 {
 }
 
+/*
+ * Delete learned materias
+ * Copy learned materias of rhs
+ */
 MateriaSource	&MateriaSource::operator=(MateriaSource const &rhs)
 {
-	(void)(rhs);
-	//this-> = rhs. .getType();//huh
-	return(*this);
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->_learnedMateria[i])
+			delete this->_learnedMateria[i];
+		this->_learnedMateria[i] = rhs._learnedMateria[i]->clone();
+	}
+	return (*this);
 }
 
-AMateria	*MateriaSource::createMateria(std::string const & type)//k heb gelooped over alle Materia die ik op dat moment in mn source heb
-//en als de getType() daarvan overeenkomt met de type parameter
-//dan return ik een clone daarvan
-//ja in je MateriaSource stop je shit, waarna je ze kunt kopieren dmv createMateria
+/*
+ * learnMateria must copy the Materia passed as parameter, and store it in
+ * memory to be cloned later. Much in the same way as for Character, the 
+ * Source can know at most 4 Materia, which are not necessarily unique.
+ */
+void	MateriaSource::learnMateria(AMateria* mat)
 {
-	AMateria *created;
-	if (type == "cure")
+	if (mat == 0)
+		return ;
+	for (int i = 0; i < 4; i++)
 	{
-		created = new Cure();
+		if (!this->_learnedMateria[i])
+		{
+			this->_learnedMateria[i] = mat;
+			std::cout << "Learned to make " << mat->getType() << "." << std::endl;
+			return ;
+		}
 	}
-	else //(type == "ice")
+	std::cout << "Cannot learn more." << std::endl;
+}
+
+AMateria	*MateriaSource::createMateria(std::string const & type)
+{
+	AMateria *created = NULL;
+
+	for (int i = 0; i < 4; i++)
 	{
-		created = new Ice();
+		if (this->_learnedMateria[i])
+		{
+			if (this->_learnedMateria[i]->getType() == type)
+			{
+				created = this->_learnedMateria[i]->clone();
+				std::cout << "You created " << type << "." << std::endl;
+				break ;
+			}
+		}
 	}
-	//AMateria copy(type);
-	std::cout << "create " << type << std::endl;
+	if (created == NULL)
+	{
+		std::cout << "Could not create " << type << ", type not known." << std::endl;
+		return (0);
+	}
 	return (created);
+
 }

@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 14:21:58 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/24 14:45:15 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/06/05 15:11:09 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ Ice::Ice(void) : AMateria("ice")
 
 Ice::Ice(Ice const &copy) : AMateria(copy)
 {
-   // this calls the AMateria copy constructor	
 }
 
 Ice::~Ice(void)
@@ -27,7 +26,6 @@ Ice::~Ice(void)
 
 Ice		&Ice::operator=(Ice const &rhs)
 {
-//	(void) src;
 	this->_type = rhs.getType();
 	this->_xp = rhs.getXP();
 	return (*this);
@@ -35,7 +33,7 @@ Ice		&Ice::operator=(Ice const &rhs)
 
 Ice*	Ice::clone() const
 {
-	Ice *clone = new Ice(*this); // this is a deep copy
+	Ice *clone = new Ice(*this);
 	return (clone);
 }
 

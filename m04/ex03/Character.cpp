@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 15:46:33 by rixt          #+#    #+#                 */
-/*   Updated: 2021/05/24 14:45:13 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/06/05 15:09:45 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 Character::Character(void)
 {
 	std::cout << "Hi.." << std::endl;
-	//set inventory slots to 0
 	for (int i = 0; i < 4; i++)
 		this->_inv[i] = 0;
 }
 
 Character::Character(std::string name) : _name(name)
 {
-	std::cout << "Hi, I am  " << name << std::endl;
-	//set inventory slots to 0
+	std::cout << "Hi, I am " << name << "." << std::endl;
 	for (int i = 0; i < 4; i++)
 		this->_inv[i] = 0;
 }
@@ -31,9 +29,7 @@ Character::Character(std::string name) : _name(name)
 Character::Character(Character &to_copy)
 {
 	this->_name = to_copy.getName();
-	std::cout << "Hi, I am a copy of " << this->_name << std::endl;
-	//Character* copy = new Character(to_copy.getName());
-	// copy inv:
+	std::cout << "Hi, I am a copy of " << this->_name << "." << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (to_copy._inv[i])
@@ -41,19 +37,25 @@ Character::Character(Character &to_copy)
 	}
 }
 
+/*
+ * The old Materia of a Character must be deleted. 
+ * Same upon destruction of a Character.
+ */
 Character::~Character(void)
 {
-	//The old Materia of a Character must be deleted. 
-	//Same upon destruction of a Character .
 	for (int i = 0; i < 4; i++)
 		delete this->_inv[i];
 	std::cout << this->_name << " dies." << std::endl;
 }
 
-Character	&Character::operator=(Character const &rhs)//is this deep assignation?
-{
+Character	&Character::operator=(Character const &rhs)
+{	
 	this->_name = rhs.getName();
-	//inventory ook !!!! copy aanroepen?
+	for (int i = 0; i < 4; i++)
+	{
+		if (rhs._inv[i])
+			this->_inv[i] = rhs._inv[i]->clone();
+	}
 	return (*this);
 }
 
@@ -66,25 +68,25 @@ std::string const	&Character::getName(void) const
  * Put item on first empty slot in inventory
  * if inventory full, say that it did not work
  */
-void	Character::equip(AMateria* m)
+void	Character::equip(AMateria* mat)
 {
-	if (m == 0)
+	if (mat == 0)
 		return ;
 	for (int i = 0; i < 4; i++)
 	{
-		if (this->_inv[i] == m)
+		if (this->_inv[i] == mat)
 		{
-			std::cout << this->_name << " already has this equipped in slot " << i << std::endl;
+			std::cout << this->_name << " already has this equipped in slot " << i << "." << std::endl;
 			return ;
 		}
 		else if(!this->_inv[i])
 		{
-			this->_inv[i] = m;
-			std::cout << this->_name << " puts " << m->getType() << " in slot " << i << std::endl;
+			this->_inv[i] = mat;
+			std::cout << this->_name << " puts " << mat->getType() << " in slot " << i << "." << std::endl;
 			return ;
 		}
 	}
-	std::cout << this->_name << "'s inventory is full" << std::endl;
+	std::cout << this->_name << "'s inventory is full." << std::endl;
 }
 
 /*
@@ -95,7 +97,7 @@ void				Character::unequip(int idx)
 {
 	if ((0 <= idx && idx <= 3) && this->_inv[idx])
 	{
-		std::cout << this->_name << " unequips " << this->_inv[idx]->getType() << " from slot " << idx << std::endl;
+		std::cout << this->_name << " unequips " << this->_inv[idx]->getType() << " from slot " << idx << "." << std::endl;
 		_inv[idx] = 0;
 	}
 	else
@@ -114,7 +116,5 @@ void				Character::use(int idx, ICharacter &target)
 		this->_inv[idx]->use(target);
 	}
 	else
-		std::cout << this->_name << ", you can't use that" << std::endl;
-	//std::cout << idx << std::endl;
-	//this->_name = target.getName();
+		std::cout << this->_name << ", you can't use that." << std::endl;
 }

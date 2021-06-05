@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 13:35:59 by rixt          #+#    #+#                 */
-/*   Updated: 2021/04/27 10:48:27 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/06/05 15:09:56 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define CHARACTER_H
 # include "ICharacter.hpp"
 # include <string>
-//# include "AMateria.hpp"
 
 class Character : virtual public ICharacter
 {
