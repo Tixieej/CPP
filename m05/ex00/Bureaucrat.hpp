@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:25 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/06/05 17:14:06 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/06/12 17:03:24 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,29 @@
 class Bureaucrat
 {
 	private:
+		Bureaucrat(void);
 		std::string	const	_name;
 		int					_grade;
 
 	public:
-		Bureaucrat(void);
+		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(Bureaucrat const &);
 		virtual ~Bureaucrat(void);
 		Bureaucrat			&operator=(Bureaucrat const &);
-		std::string const	&getName() const;
-		int	const			&getGrade() const;
-//		std::string			GradeTooHighException(int grade); //misschien worden dit geen methodes.. geen idee nog
-//		std::string			GradeTooLowException(int grade);
+		std::string			getName() const;
+		int					getGrade() const;
 		void				increment();
 		void				decrement();
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 	std::ostream		&operator<<(std::ostream &o, Bureaucrat const &bC);
 
