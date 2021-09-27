@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/06/12 17:03:18 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/09/27 14:09:12 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,20 @@ void				Bureaucrat::decrement()
 		throw GradeTooLowException();
 	else
 		(this->_grade)++;
+}
+
+void				Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->_name << " signs " << form.getName() << "." << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << this->_name << " cannot sign " << form.getName() << ", because: ";	
+		std::cout << e.what() << std::endl;
+	}
 }
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &bC)

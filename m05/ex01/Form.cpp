@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/06/12 17:10:56 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/09/27 14:16:07 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,73 +16,81 @@
 
 Form::Form(void)
 {
+	this->_isSigned = false;
+
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
+Form::Form(const std::string name, int grade) : _name(name)
 {
+	this->_isSigned = false;
 	if (grade > 150)
 		throw GradeTooLowException();
 	else if (grade < 0)
 		throw GradeTooHighException();
 	else
-		this->_grade = grade;
+		this->_reqGrade = grade;
 
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &copy) : _name(copy.getName())
+Form::Form(Form const &copy) : _name(copy.getName())
 {
-	this->_grade = copy.getGrade();
+	this->_reqGrade = copy.getGrade();
 }
 
-Bureaucrat::~Bureaucrat(void)
+Form::~Form(void)
 {
 }
 
-Bureaucrat			&Bureaucrat::operator=(Bureaucrat const &rhs)
+Form			&Form::operator=(Form const &rhs)
 {
-	this->_grade = rhs.getGrade();
+	this->_reqGrade = rhs.getGrade();
 	return (*this);
 }
 
-std::string			Bureaucrat::getName(void) const
-
+std::string			Form::getName(void) const
 {
 	return (this->_name);
 }
 
-int					Bureaucrat::getGrade(void) const
+bool				Form::getIsSigned(void) const
 {
-	return (this->_grade);
+	return (this->_isSigned);
 }
 
-const char			*Bureaucrat::GradeTooHighException::what(void) const throw()
+int					Form::getGrade(void) const
+{
+	return (this->_reqGrade);
+}
+
+const char			*Form::GradeTooHighException::what(void) const throw()
 {
 		return ("Grade Too High");
 }
 
-const char			*Bureaucrat::GradeTooLowException::what(void) const throw()
+const char			*Form::GradeTooLowException::what(void) const throw()
 {
 		return ("Grade Too Low");
 }
 
-void				Bureaucrat::increment()
+void				Form::beSigned(Bureaucrat const &bC)
 {
-	if (this->_grade < 1)
-		throw GradeTooHighException();
+	if (bC.getGrade() < this->_reqGrade)
+	{
+		this->_isSigned = true;
+	}
 	else
-		(this->_grade)--;
-}
-
-void				Bureaucrat::decrement()
-{
-	if (this->_grade > 149)
+	{
 		throw GradeTooLowException();
-	else
-		(this->_grade)++;
+	}
 }
 
-std::ostream	&operator<<(std::ostream &o, Bureaucrat const &bC)
+std::ostream	&operator<<(std::ostream &o, Form const &form)
 {
-	o << bC.getName() << ", bureacrat grade " << bC.getGrade();
+	o << "Form " << form.getName() << " with grade " << form.getGrade() << " is";
+	if (!form.getIsSigned())
+	{
+		o << " not";
+	}
+	o << " signed.";
 	return (o);
 }
