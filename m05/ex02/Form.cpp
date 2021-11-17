@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 17:04:14 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/17 18:20:18 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ void				Form::execute(Bureaucrat const &executor) const
 	{
 		if (bC.getGrade() < this->_execGrade)
 		{
-			this->_isSigned = true;
+			// specific execute function
+
 		}
 		else
 		{

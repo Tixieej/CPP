@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:25 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 13:34:30 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/17 18:20:20 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Bureaucrat
 		void				increment();
 		void				decrement();
 		void				signForm(Form &form);
+		void				executeForm(Form const &form);
 		class GradeTooHighException : public std::exception
 		{
 			public:

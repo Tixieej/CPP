@@ -16,8 +16,8 @@
 
 RobotomyRequestForm::RobotomyRequestForm(void)
 {
-	this->_isSigned = false;
-
+	this->_signGrade = 72;
+	this->_execGrade = 45;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string name, int grade) : _name(name)

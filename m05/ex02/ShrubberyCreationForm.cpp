@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 16:50:54 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 17:24:11 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/17 18:20:09 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ std::string			ShrubberyCreationForm::getName(void) const
 	return (this->_name);
 }
 
+//zijn deze getters nodig of kunnen die alleen in Form bestaan?
 bool				ShrubberyCreationForm::getIsSigned(void) const
 {
 	return (this->_isSigned);
@@ -78,7 +79,10 @@ void				ShrubberyCreationForm::beSigned(Bureaucrat const &bC)
 	}
 }
 
-void			ShrubberyCreationForm::execute(
+void			ShrubberyCreationForm::execute(Bureaucrat const& executor)
+{
+	Form::execute(executor);
+}
 
 std::ostream	&operator<<(std::ostream &o, ShrubberyCreationForm const &form)
 {

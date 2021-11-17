@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 17:24:08 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/17 18:20:17 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ class Form
 		std::string	const	_name;
 		bool				_isSigned;
 		int					_reqGrade;
+		int					_signGrade;
 
 	public:
 		Form(const std::string name, int reqGrade);
@@ -35,7 +36,7 @@ class Form
 		bool				getIsSigned() const;
 		int					getGrade() const;
 		void				beSigned(Bureaucrat const &bC);
-		virtual void		execute(Bureaucrat const &executor) const = 0;
+		void				execute(Bureaucrat const &executor);
 		class GradeTooHighException : public std::exception
 		{
 			public:

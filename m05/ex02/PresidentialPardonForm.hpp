@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Form.hpp                                           :+:    :+:            */
+/*   PresidentialPardonForm.hpp                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 13:29:49 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/17 18:19:18 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
-
-class Form
+//todo: welke functies hier zijn overbodig? de getters?
+class PresidentialPardonForm
 {
 	private:
-		Form(void);
+		PresidentialPardonForm(void);
 		std::string	const	_name;
 		bool				_isSigned;
 		int					_reqGrade;
 
 	public:
-		Form(const std::string name, int reqGrade);
-		Form(Form const &);
-		virtual ~Form(void);
-		Form			&operator=(Form const &);
-		std::string			getName() const;
-		bool				getIsSigned() const;
-		int					getGrade() const;
-		void				beSigned(Bureaucrat const &bC);
+		PresidentialPardonForm(const std::string name, int reqGrade);
+		PresidentialPardonForm(PresidentialPardonForm const &);
+		virtual ~PresidentialPardonForm(void);
+		PresidentialPardonForm		&operator=(PresidentialPardonForm const &);
+		std::string					getName() const;
+		bool						getIsSigned() const;
+		int							getGrade() const;
+		void						beSigned(Bureaucrat const &bC);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -46,6 +46,6 @@ class Form
 				virtual const char *what() const throw();
 		};
 };
-	std::ostream		&operator<<(std::ostream &o, Form const &form);
+	std::ostream		&operator<<(std::ostream &o, PresidentialPardonForm const &form);
 
 #endif

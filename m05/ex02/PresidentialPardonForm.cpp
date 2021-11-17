@@ -16,8 +16,8 @@
 
 PresidentialPardonForm::PresidentialPardonForm(void)
 {
-	this->_isSigned = false;
-
+	this->_signGrade = 25;
+	this->_execGrade = 5;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string name, int grade) : _name(name)
@@ -60,6 +60,13 @@ bool				PresidentialPardonForm::getIsSigned(void) const
 int					PresidentialPardonForm::getGrade(void) const
 {
 	return (this->_reqGrade);
+}
+
+void				execute(Bureaucrat const & executor) const
+{
+	Form::execute(executor);
+	//TODO: wat is target? is dat de naam van de bureaucraat?
+	std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }
 
 const char			*PresidentialPardonForm::GradeTooHighException::what(void) const throw()

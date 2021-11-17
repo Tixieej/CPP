@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 14:09:12 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/17 18:20:21 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,16 @@ void				Bureaucrat::signForm(Form &form)
 		std::cout << this->_name << " cannot sign " << form.getName() << ", because: ";	
 		std::cout << e.what() << std::endl;
 	}
+}
+
+void				Bureaucrat::executeForm(Form const &form)
+{
+	// TODO: if statements die opvangeen wat er niet goed gaat
+
+	// Output als het goed gaat
+	std::cout << this->_name << " executes " << form.getName() << std::endl;
+	// execute functie van form aanroepen
+	form->execute(this);
 }
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &bC)
