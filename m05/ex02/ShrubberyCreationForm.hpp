@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 16:50:39 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 17:24:09 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/24 19:23:57 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,22 @@
 # include <string>
 # include <iostream>
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 class Bureaucrat;
 
-class ShrubberyCreationForm : Form
+class ShrubberyCreationForm : public Form
 {
 	private:
 		ShrubberyCreationForm(void);
-		std::string	const	_name;
-		bool				_isSigned;
-		int					_signGrade;
-		int					_execGrade
 
 	public:
-		ShrubberyCreationForm(const std::string name);
+		ShrubberyCreationForm(const std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm const &);
 		virtual ~ShrubberyCreationForm(void);
 		ShrubberyCreationForm			&operator=(ShrubberyCreationForm const &);
-		std::string			getName() const;
-		bool				getIsSigned() const;
-		int					getGrade() const;
-		void				beSigned(Bureaucrat const &bC);
+		void						beSigned(Bureaucrat const &bC);
+		void						execute(Bureaucrat const & executor) const;
 		class GradeTooHighException : public std::exception
 		{
 			public:

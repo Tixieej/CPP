@@ -6,35 +6,31 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/17 18:19:18 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/24 19:23:11 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_H
-# define FORM_H
+#ifndef PRESIDENTIALPARDONFORM_H
+# define PRESIDENTIALPARDONFORM_H
 # include <string>
 # include <iostream>
 # include "Bureaucrat.hpp"
+# include "Form.hpp"
 
 class Bureaucrat;
 //todo: welke functies hier zijn overbodig? de getters?
-class PresidentialPardonForm
+class PresidentialPardonForm : public Form
 {
 	private:
 		PresidentialPardonForm(void);
-		std::string	const	_name;
-		bool				_isSigned;
-		int					_reqGrade;
 
 	public:
-		PresidentialPardonForm(const std::string name, int reqGrade);
+		PresidentialPardonForm(const std::string target);
 		PresidentialPardonForm(PresidentialPardonForm const &);
 		virtual ~PresidentialPardonForm(void);
 		PresidentialPardonForm		&operator=(PresidentialPardonForm const &);
-		std::string					getName() const;
-		bool						getIsSigned() const;
-		int							getGrade() const;
 		void						beSigned(Bureaucrat const &bC);
+		void						execute(Bureaucrat const & executor) const;
 		class GradeTooHighException : public std::exception
 		{
 			public:

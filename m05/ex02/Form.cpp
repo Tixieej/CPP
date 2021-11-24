@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/17 18:20:18 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/24 18:18:05 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,39 +17,51 @@
 Form::Form(void)
 {
 	this->_isSigned = false;
-
 }
 
-Form::Form(const std::string name, int grade) : _name(name)
+Form::Form(const std::string target, int signGrade, int execGrade) : _target(target)
 {
 	this->_isSigned = false;
-	if (grade > 150)
+	if (signGrade > 150)
 		throw GradeTooLowException();
-	else if (grade < 0)
+	else if (signGrade < 0)
 		throw GradeTooHighException();
 	else
-		this->_signGrade = grade;
+		this->_signGrade = signGrade;
+
+	if (execGrade > 150)
+		throw GradeTooLowException();
+	else if (execGrade < 0)
+		throw GradeTooHighException();
+	else
+		this->_execGrade = execGrade;
 
 }
 
-Form::Form(Form const &copy) : _name(copy.getName())
+// TODO: moet de child copy constructor hiernaar verwijzen (zoja: hoe?), of juist niet?
+// TODO: als een signed form gekopieerd wordt, is de kopie dan ook gesigned?
+Form::Form(Form const &copy) : _target(copy.getTarget())
 {
-	this->_signGrade = copy.getGrade();
+	this->_signGrade = copy.getSignGrade();
+	this->_execGrade = copy.getExecGrade();
 }
 
 Form::~Form(void)
 {
 }
 
+// TODO: als een signed form geoverload wordt, is de kopie dan ook gesigned?
+// TODO: target is const, dus die moet niet worden geoverload? of moet target niet const zijn?
 Form			&Form::operator=(Form const &rhs)
 {
-	this->_signGrade = rhs.getGrade();
+	this->_signGrade = rhs.getSignGrade();
+	this->_execGrade = rhs.getExecGrade();
 	return (*this);
 }
 
-std::string			Form::getName(void) const
+std::string			Form::getTarget(void) const
 {
-	return (this->_name);
+	return (this->_target);
 }
 
 bool				Form::getIsSigned(void) const
@@ -57,9 +69,15 @@ bool				Form::getIsSigned(void) const
 	return (this->_isSigned);
 }
 
-int					Form::getGrade(void) const
+// TODO: maak aparte getters voor signGrade en execGrade (in Form?)
+int					Form::getSignGrade(void) const
 {
 	return (this->_signGrade);
+}
+
+int					Form::getExecGrade(void) const
+{
+	return (this->_execGrade);
 }
 
 void				Form::beSigned(Bureaucrat const &bC)
@@ -74,6 +92,7 @@ void				Form::beSigned(Bureaucrat const &bC)
 	}
 }
 
+// TODO: ?
 void				Form::execute(Bureaucrat const &executor) const
 {
 	if (this.getIsSigned)
@@ -112,7 +131,7 @@ const char			*Form::NotSignedException::what(void) const throw()
 
 std::ostream	&operator<<(std::ostream &o, Form const &form)
 {
-	o << "Form " << form.getName() << " with grade " << form.getGrade() << " is";
+	o << "Form " << form.getTarget() << " with grade " << form.getGrade() << " is";
 	if (!form.getIsSigned())
 	{
 		o << " not";

@@ -6,55 +6,43 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 16:50:54 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/17 18:20:09 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/24 18:22:18 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include <string>
 #include <iostream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(void)
+ShrubberyCreationForm::ShrubberyCreationForm(void) : Form()
 {
 	this->_signGrade = 145;
 	this->_execGrade = 137;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string home) : _home(home)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : Form(target, 145, 137)
 {
-	this->_signGrade = 145;
-	this->_execGrade = 137;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy) : _name(copy.getName())
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy) : Form(copy.getTarget(), copy.getSignGrade(), copy.getExecGrade())
 {
-	this->_signGrade = copy.getGrade();
+	// this->_target = copy.getTarget();
+	// this->_signGrade = copy.getSignGrade();
+	// this->_execGrade = copy.getExecGrade();
+	*this = copy;
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
 }
 
+//TODO:
 ShrubberyCreationForm			&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
 {
-	this->_signGrade = rhs.getGrade();
+	this->_signGrade = rhs.getSignGrade();
+	this->_execGrade = rhs.getExecGrade();
 	return (*this);
-}
-
-std::string			ShrubberyCreationForm::getName(void) const
-{
-	return (this->_name);
-}
-
-//zijn deze getters nodig of kunnen die alleen in Form bestaan?
-bool				ShrubberyCreationForm::getIsSigned(void) const
-{
-	return (this->_isSigned);
-}
-
-int					ShrubberyCreationForm::getGrade(void) const
-{
-	return (this->_signGrade);
 }
 
 const char			*ShrubberyCreationForm::GradeTooHighException::what(void) const throw()

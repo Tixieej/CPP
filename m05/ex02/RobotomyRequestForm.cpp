@@ -20,21 +20,16 @@ RobotomyRequestForm::RobotomyRequestForm(void)
 	this->_execGrade = 45;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string name, int grade) : _name(name)
+RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form(target, 72, 45)
 {
-	this->_isSigned = false;
-	if (grade > 150)
-		throw GradeTooLowException();
-	else if (grade < 0)
-		throw GradeTooHighException();
-	else
-		this->_reqGrade = grade;
-
 }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy) : _name(copy.getName())
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy) : Form(copy.getTarget(), copy.getSignGrade(), copy.getExecGrade())
 {
-	this->_reqGrade = copy.getGrade();
+	// this->_target = copy.getName();
+	// this->_signGrade = copy.getSignGrade();
+	// this->_execGrade = copy.getExecGrade();
+	*this = copy;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
@@ -43,23 +38,10 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm			&RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
 {
-	this->_reqGrade = rhs.getGrade();
+	this->_target = rhs.getName();
+	this->_signGrade = rhs.getSignGrade();
+	this->_execGrade = rhs.getExecGrade();
 	return (*this);
-}
-
-std::string			RobotomyRequestForm::getName(void) const
-{
-	return (this->_name);
-}
-
-bool				RobotomyRequestForm::getIsSigned(void) const
-{
-	return (this->_isSigned);
-}
-
-int					RobotomyRequestForm::getGrade(void) const
-{
-	return (this->_reqGrade);
 }
 
 const char			*RobotomyRequestForm::GradeTooHighException::what(void) const throw()
@@ -74,7 +56,7 @@ const char			*RobotomyRequestForm::GradeTooLowException::what(void) const throw(
 
 void				RobotomyRequestForm::beSigned(Bureaucrat const &bC)
 {
-	if (bC.getGrade() < this->_reqGrade)
+	if (bC.getGrade() < this->_signGrade)
 	{
 		this->_isSigned = true;
 	}

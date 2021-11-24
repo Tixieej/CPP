@@ -20,49 +20,32 @@ PresidentialPardonForm::PresidentialPardonForm(void)
 	this->_execGrade = 5;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string name, int grade) : _name(name)
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form(target, 25, 5)
 {
-	this->_isSigned = false;
-	if (grade > 150)
-		throw GradeTooLowException();
-	else if (grade < 0)
-		throw GradeTooHighException();
-	else
-		this->_reqGrade = grade;
-
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &copy) : _name(copy.getName())
+// TODO: hier denk ik niet de copy van Form aanroepen?
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &copy) : Form(copy.getTarget(), copy.getSignGrade(), copy.getExecGrade())
 {
-	this->_reqGrade = copy.getGrade();
+	// this->_signGrade = copy.getSignGrade();
+	// this->_execGrade = copy.getExecGrade();
+	*this = copy;
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(void)
 {
 }
 
+//TODO:
 PresidentialPardonForm			&PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
 {
-	this->_reqGrade = rhs.getGrade();
+	this->_target = rhs.getTarget();
+	this->_signGrade = rhs.getSignGrade();
+	this->_execGrade = rhs.getExecGrade();
 	return (*this);
 }
 
-std::string			PresidentialPardonForm::getName(void) const
-{
-	return (this->_name);
-}
-
-bool				PresidentialPardonForm::getIsSigned(void) const
-{
-	return (this->_isSigned);
-}
-
-int					PresidentialPardonForm::getGrade(void) const
-{
-	return (this->_reqGrade);
-}
-
-void				execute(Bureaucrat const & executor) const
+void				PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
 	Form::execute(executor);
 	//TODO: wat is target? is dat de naam van de bureaucraat?
@@ -81,7 +64,7 @@ const char			*PresidentialPardonForm::GradeTooLowException::what(void) const thr
 
 void				PresidentialPardonForm::beSigned(Bureaucrat const &bC)
 {
-	if (bC.getGrade() < this->_reqGrade)
+	if (bC.getGrade() < this->_signGrade)
 	{
 		this->_isSigned = true;
 	}
