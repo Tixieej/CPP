@@ -39,13 +39,12 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 //TODO:
 PresidentialPardonForm			&PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
 {
-	this->_target = rhs.getTarget();
 	this->_signGrade = rhs.getSignGrade();
 	this->_execGrade = rhs.getExecGrade();
 	return (*this);
 }
 
-void				PresidentialPardonForm::execute(Bureaucrat const & executor) const
+void				PresidentialPardonForm::execute(Bureaucrat const & executor)
 {
 	Form::execute(executor);
 	//TODO: wat is target? is dat de naam van de bureaucraat?
@@ -76,11 +75,6 @@ void				PresidentialPardonForm::beSigned(Bureaucrat const &bC)
 
 std::ostream	&operator<<(std::ostream &o, PresidentialPardonForm const &form)
 {
-	o << "PresidentialPardonForm " << form.getName() << " with grade " << form.getGrade() << " is";
-	if (!form.getIsSigned())
-	{
-		o << " not";
-	}
-	o << " signed.";
+	o << "PresidentialPardonForm with grade " << form.getSignGrade() << std::endl;
 	return (o);
 }

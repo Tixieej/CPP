@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/24 18:18:05 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/25 18:24:45 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,9 +95,9 @@ void				Form::beSigned(Bureaucrat const &bC)
 // TODO: ?
 void				Form::execute(Bureaucrat const &executor) const
 {
-	if (this.getIsSigned)
+	if (this->getIsSigned())
 	{
-		if (bC.getGrade() < this->_execGrade)
+		if (executor.getGrade() < this->_execGrade)
 		{
 			// specific execute function
 
@@ -131,7 +131,7 @@ const char			*Form::NotSignedException::what(void) const throw()
 
 std::ostream	&operator<<(std::ostream &o, Form const &form)
 {
-	o << "Form " << form.getTarget() << " with grade " << form.getGrade() << " is";
+	o << "Form " << form.getTarget() << " with grade " << form.getSignGrade() << " is";
 	if (!form.getIsSigned())
 	{
 		o << " not";

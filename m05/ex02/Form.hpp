@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/24 17:56:13 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/25 18:09:48 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class Form
 		int					getSignGrade() const;
 		int					getExecGrade() const;
 		void				beSigned(Bureaucrat const &bC);
-		void				execute(Bureaucrat const &executor);
+		void				execute(Bureaucrat const &executor) const;
 		class GradeTooHighException : public std::exception
 		{
 			public:

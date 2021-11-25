@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 16:50:54 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/24 18:22:18 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/25 18:29:01 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,18 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 }
 
 //TODO:
-ShrubberyCreationForm			&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
+ShrubberyCreationForm		&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
 {
 	this->_signGrade = rhs.getSignGrade();
 	this->_execGrade = rhs.getExecGrade();
 	return (*this);
+}
+
+void				ShrubberyCreationForm::execute(Bureaucrat const & executor) //const hier??
+{
+	Form::execute(executor);
+	//TODO: 
+	std::cout << executor.getName() << " TODO " << std::endl;
 }
 
 const char			*ShrubberyCreationForm::GradeTooHighException::what(void) const throw()
@@ -67,18 +74,8 @@ void				ShrubberyCreationForm::beSigned(Bureaucrat const &bC)
 	}
 }
 
-void			ShrubberyCreationForm::execute(Bureaucrat const& executor)
-{
-	Form::execute(executor);
-}
-
 std::ostream	&operator<<(std::ostream &o, ShrubberyCreationForm const &form)
-{
-	o << "ShrubberyCreationForm " << form.getName() << " with grade " << form.getGrade() << " is";
-	if (!form.getIsSigned())
-	{
-		o << " not";
-	}
-	o << " signed.";
+{//TODO: is de info of die signed is nog steeds nodig, want je moet de naam teruggeven bij bijv execute.
+	o << "ShrubberyCreationForm with grade " << form.getSignGrade() <<  std::endl;
 	return (o);
 }

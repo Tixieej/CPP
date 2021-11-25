@@ -38,10 +38,21 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm			&RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
 {
-	this->_target = rhs.getName();
 	this->_signGrade = rhs.getSignGrade();
 	this->_execGrade = rhs.getExecGrade();
 	return (*this);
+}
+
+void				RobotomyRequestForm::execute(Bureaucrat const & executor)
+{
+	Form::execute(executor);
+	std::cout << "* Some drilling noises * ... ";
+	//and tell us that <target> has been robotomized successfully 50% of the time. Otherwise, tell us it’s a failure.
+	int random = 5;
+	if (random == 0)
+		std::cout << "It's a failure" << std::endl;
+	else
+		std::cout << executor.getName() << " has been robotomized successfully." << std::endl;
 }
 
 const char			*RobotomyRequestForm::GradeTooHighException::what(void) const throw()
@@ -68,11 +79,6 @@ void				RobotomyRequestForm::beSigned(Bureaucrat const &bC)
 
 std::ostream	&operator<<(std::ostream &o, RobotomyRequestForm const &form)
 {
-	o << "RobotomyRequestForm " << form.getName() << " with grade " << form.getGrade() << " is";
-	if (!form.getIsSigned())
-	{
-		o << " not";
-	}
-	o << " signed.";
+	o << "RobotomyRequestForm with grade " << form.getSignGrade() << std::endl;
 	return (o);
 }

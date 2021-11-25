@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/24 19:23:58 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/25 18:08:49 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class RobotomyRequestForm : public Form
 		virtual ~RobotomyRequestForm(void);
 		RobotomyRequestForm			&operator=(RobotomyRequestForm const &);
 		void						beSigned(Bureaucrat const &bC);
-		void						execute(Bureaucrat const & executor) const;
+		void						execute(Bureaucrat const & executor);
 		class GradeTooHighException : public std::exception
 		{
 			public:

@@ -6,11 +6,11 @@
 #    By: rde-vrie <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/31 10:56:55 by rde-vrie      #+#    #+#                  #
-#    Updated: 2021/09/27 17:26:11 by rde-vrie      ########   odam.nl          #
+#    Updated: 2021/11/25 18:30:48 by rixt          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+NAME = ex02
 OBJ = main.o Bureaucrat.o Form.o ShrubberyCreationForm.o RobotomyRequestForm.o PresidentialPardonForm.o
 CC = clang++
 FLAGS = -Wall -Werror -Wextra -std=c++98
