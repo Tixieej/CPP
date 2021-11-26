@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/25 18:08:49 by rixt          ########   odam.nl         */
+/*   Updated: 2021/11/26 14:30:52 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class RobotomyRequestForm : public Form
 
 	public:
 		RobotomyRequestForm(const std::string target);
-		RobotomyRequestForm(Form const &);
+		RobotomyRequestForm(RobotomyRequestForm const &);
 		virtual ~RobotomyRequestForm(void);
 		RobotomyRequestForm			&operator=(RobotomyRequestForm const &);
 		void						beSigned(Bureaucrat const &bC);

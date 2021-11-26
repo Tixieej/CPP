@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/11/25 18:18:04 by rixt          ########   odam.nl         */
+/*   Updated: 2021/11/26 14:33:42 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int	main()
 	PresidentialPardonForm ppf("target ppf");
 	// Constructor too low grade tests
 	//std::cout << COLOR_ORANGE;
-	
+	anne.executeForm(scf);
+	anne.signForm(scf);
+	anne.executeForm(scf);
 
 	// Good Bureaucrat, Increment tests
 	std::cout << COLOR_ORANGE;
@@ -43,7 +45,8 @@ int	main()
 	std::cout << COLOR_PURPLE;
 	
 	// Destructor tests
-	std::cout << COLOR_YELLOW;
+	std::cout << COLOR_YELLOW << "done" << std::endl;
+
 	std::cout << COLOR_RESET;
 	return 0;
 }
