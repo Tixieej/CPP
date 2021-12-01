@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/11/26 22:03:49 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/01 17:32:38 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main()
 	// Constructors
 	std::cout << COLOR_PINK;
 	Bureaucrat anne("Anne", 55);
+	Bureaucrat ip("important person", 1);
 	ShrubberyCreationForm scf("target scf");
 	RobotomyRequestForm rrf("target rrf");
 	PresidentialPardonForm ppf("target ppf");
@@ -123,6 +124,23 @@ int	main()
 
 	// Form sign tests
 	std::cout << COLOR_BLU;
+		try
+	{
+		ip.signForm(ppf);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	try
+	{
+		ip.executeForm(ppf);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
 		
 
 	// Good Bureaucrat, Decrement tests

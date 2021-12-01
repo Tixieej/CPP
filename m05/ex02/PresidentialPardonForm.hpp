@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/25 18:08:21 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/01 17:49:18 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class PresidentialPardonForm : public Form
 		virtual ~PresidentialPardonForm(void);
 		PresidentialPardonForm		&operator=(PresidentialPardonForm const &);
 		void						beSigned(Bureaucrat const &bC);
-		void						execute(Bureaucrat const & executor);
+		void						execute(Bureaucrat const & executor) const;
 		class GradeTooHighException : public std::exception
 		{
 			public:

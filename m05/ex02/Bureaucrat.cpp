@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/25 18:23:32 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/01 17:51:43 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void				Bureaucrat::executeForm(Form const &form)
 	// Output als het goed gaat
 	std::cout << this->_name << " executes " << form << std::endl;
 	// execute functie van form aanroepen
-	form.execute(*this);
+	form.execute(*this); // TODO: form is hier altijd parent Form en nooit een van de subclasses.
 }
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &bC)

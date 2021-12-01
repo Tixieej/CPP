@@ -44,9 +44,9 @@ PresidentialPardonForm			&PresidentialPardonForm::operator=(PresidentialPardonFo
 	return (*this);
 }
 
-void				PresidentialPardonForm::execute(Bureaucrat const & executor)
+void				PresidentialPardonForm::execute(Bureaucrat const & executor) const
 {
-	Form::execute(executor);
+	//Form::execute(executor);
 	//TODO: wat is target? is dat de naam van de bureaucraat?
 	std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

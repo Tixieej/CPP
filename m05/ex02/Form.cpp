@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/25 18:24:45 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/01 17:54:14 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,11 +95,13 @@ void				Form::beSigned(Bureaucrat const &bC)
 // TODO: ?
 void				Form::execute(Bureaucrat const &executor) const
 {
+	std::cout << "we are in the execute function of Form.cpp" << std::endl;
 	if (this->getIsSigned())
 	{
 		if (executor.getGrade() < this->_execGrade)
 		{
 			// specific execute function
+			//roep subclass aan? heb je die info hier??
 
 		}
 		else
