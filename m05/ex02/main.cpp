@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/06 15:21:53 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/06 19:13:30 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int	main()
 {
 	// Constructors
-	srand (time(NULL));
+	srand(time(NULL));
 	Bureaucrat anne("Anne", 140);
 	Bureaucrat ber("Bertha", 70);
 	Bureaucrat car("Carla", 20);
@@ -28,7 +28,7 @@ int	main()
 	ShrubberyCreationForm scf("Home");
 	RobotomyRequestForm rrf("Lamp");
 	PresidentialPardonForm ppf("Rixt");
-	
+
 	std::cout << COLOR_GREEN << "Test: Anne can only sign shrubbery" << std::endl;
 	std::cout << COLOR_PINK;
 	
@@ -193,7 +193,6 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-
 	// D
 	std::cout << COLOR_GREEN << "Test: Demy can execute everything" << std::endl;
 	std::cout << COLOR_PURPLE;
@@ -229,21 +228,61 @@ int	main()
 	}
 	
 	// Copy constructor and =-overload
-	std::cout << COLOR_GREEN << "Test: Copy constructors and =-overload" << std::endl;
+	std::cout << COLOR_GREEN << "Test: Copy constructors and =-overload: Are these copied forms signed?" << std::endl;
 	std::cout << COLOR_YELLOW;
 
-	Bureaucrat copy_car(&car);
+	Bureaucrat copy_car(car);
 	Bureaucrat copy_dem = dem;
-	ShrubberyCreationForm copy_scf(&scf);
+	ShrubberyCreationForm copy_scf(scf);
 	RobotomyRequestForm copy_rrf = rrf;
-	PresidentialPardonForm copy_ppf(&ppf);
+	PresidentialPardonForm copy_ppf(ppf);
 
 	// Are these forms signed?
-	har->execute(copy_scf);
-	har->execute(copy_rrf);
-	har->execute(copy_ppf);
+	try
+	{
+		copy_dem.executeForm(copy_scf);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
-	std::cout << COLOR_GREEN << "done" << std::endl;
+	try
+	{
+		copy_dem.executeForm(copy_rrf);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	try
+	{
+		copy_dem.executeForm(copy_ppf);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	// Sign and execute one of them
+	try
+	{
+		copy_dem.signForm(copy_rrf);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	try
+	{
+		copy_dem.executeForm(copy_rrf);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 	std::cout << COLOR_RESET;
 	return 0;

@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 16:50:54 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/06 14:48:24 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/06 19:17:44 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : Form(ta
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &copy) : Form(copy.getTarget(), copy.getSignGrade(), copy.getExecGrade())
 {
-	// this->_target = copy.getTarget();
-	// this->_signGrade = copy.getSignGrade();
-	// this->_execGrade = copy.getExecGrade();
 	*this = copy;
 }
 
@@ -38,7 +35,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 {
 }
 
-//TODO:
 ShrubberyCreationForm		&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
 {
 	this->_signGrade = rhs.getSignGrade();
@@ -49,20 +45,20 @@ ShrubberyCreationForm		&ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 void				ShrubberyCreationForm::sub_execute() const
 {
 	std::ofstream file(_target + "_shrubbery");
-	file << "                                  # #### ####                           %%%%%%%" << std::endl;
-    file << "                            ### \\/#|### |/####                     ,'%%\\\\-*%%%%%" << std::endl;
-    file << "                           ##\\/#/ \\||/##/_/##/_#                ;%%%%* /  _%%%%   .._" << std::endl;
-    file << "                         ###  \\/###|/ \\/ # ###                   ,%%#% # %#(_.*%  %%%." << std::endl;
-    file << "                       ##_\\_#\\_\\## | #/###_/_####              % *%%, ,%%%%*(  '/ #%%" << std::endl;
-    file << "                      ## #### # \\ #| /  #### ##/##               %^   ,*%%% )\\|,%%*%,_" << std::endl;
-    file << "                       __#_--###`  |{,###---###-~                   *%   #\\  / #).-^*%%*" << std::endl;
-    file << "                                 \\ }{                                *% #\\ \\/ / #  *%%*"<< std::endl;
-    file << "                                  }}{                                   _.) ,/ *%," << std::endl;
-    file << "                                  }}{                           _________/)#(_____________" << std::endl;
-    file << "                                  {{}" << std::endl;
-    file << "                            , -=-~{ .-^- _" << std::endl;
-    file << "                                  `}" << std::endl;
-    file << "                                   {" << std::endl;
+	file << "                    # #### ####                               %%%%%%%" << std::endl;
+    file << "                  ### \\/#|### |/####                     ,'%%\\\\-*%%%%%" << std::endl;
+    file << "                 ##\\/#/ \\||/##/_/##/_#                ;%%%%* /  _%%%%   .._" << std::endl;
+    file << "               ###  \\/###|/ \\/ # ###                   ,%%#% # %#(_.*%  %%%." << std::endl;
+    file << "             ##_\\_#\\_\\## | #/###_/_####              % *%%, ,%%%%*(  '/ #%%" << std::endl;
+    file << "            ## #### # \\ #| /  #### ##/##               %^   ,*%%% )\\|,%%*%,_" << std::endl;
+    file << "             __#_--###`  |{,###---###-~                   *%   #\\  / #).-^*%%*" << std::endl;
+    file << "                       \\ }{                                *% #\\ \\/ / #  *%%*"<< std::endl;
+    file << "                        }}{                                   _.) ,/ *%," << std::endl;
+    file << "                        }}{                           _________/)#(_____________" << std::endl;
+    file << "                        {{}" << std::endl;
+    file << "                  , -=-~{ .-^- _" << std::endl;
+    file << "                        `}" << std::endl;
+    file << "                         {" << std::endl;
 	file.close();
 }
 
