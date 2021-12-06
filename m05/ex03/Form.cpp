@@ -38,7 +38,6 @@ Form::Form(const std::string target, int signGrade, int execGrade) : _target(tar
 
 }
 
-// TODO: moet de child copy constructor hiernaar verwijzen (zoja: hoe?), of juist niet?
 // TODO: als een signed form gekopieerd wordt, is de kopie dan ook gesigned?
 Form::Form(Form const &copy) : _target(copy.getTarget())
 {
@@ -96,7 +95,6 @@ void				Form::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() < this->_execGrade)
 	{
-		// specific execute function
 		this->sub_execute();
 	}
 	else
