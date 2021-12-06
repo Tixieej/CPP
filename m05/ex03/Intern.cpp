@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Intern.cpp                                         :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: rixt <marvin@codam.nl>                       +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2021/12/06 20:55:39 by rixt          #+#    #+#                 */
+/*   Updated: 2021/12/06 21:30:34 by rixt          ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Intern.hpp"
 #include <string>
 #include <iostream>
@@ -6,9 +18,8 @@ Intern::Intern(void)
 {
 }
 
-Intern::Intern(Intern const &copy) : _name(copy.getName())
+Intern::Intern(Intern const &copy)
 {
-	this->_grade = copy.getGrade();
 }
 
 Intern::~Intern(void)
@@ -17,46 +28,26 @@ Intern::~Intern(void)
 
 Intern			&Intern::operator=(Intern const &rhs)
 {
-	this->_grade = rhs.getGrade();
 	return (*this);
 }
 
-std::string			Intern::getName(void) const
+Form		*makeForm(std::string name, std::string target);
 {
-	return (this->_name);
-}
-
-int					Intern::getGrade(void) const
-{
-	return (this->_grade);
-}
-
-void				Intern::executeForm(Form const &form)
-{
-	// TODO: if statements die opvangen wat er niet goed gaat
-	if(form.getIsSigned())
+	// probeer form in name te maken en pointer te returnen, als het niet lukt, ga de else in.
+	// het mag kennelijk niet gewoon een if elseif else iets zijn, dus ik weet niet wat ik dan moet doen, maar goed.
+	if()
 	{
-		try
-		{
-			form.execute(*this);
-			std::cout << this->_name << " executes form." << std::endl;
-		}
-		catch (std::exception & e)
-		{
-			std::cout << this->_name << " cannot execute form, because: ";	
-			std::cout << e.what() << std::endl;
-		}
-	
+		std::cout << "Intern creates <form>" << std::endl;
+		return 
 	}
 	else
 	{
-		std::cout << this->_name << " cannot execute form, because: ";
-		throw Form::NotSignedException();
+		std::cout << "error message" << std::endl;
 	}	
 }
 
 std::ostream	&operator<<(std::ostream &o, Intern const &bC)
 {
-	o << bC.getName() << ", bureacrat grade " << bC.getGrade();
+	o << "Intern" << std::endl;
 	return (o);
 }
