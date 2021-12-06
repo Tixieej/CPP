@@ -26,7 +26,6 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 		throw GradeTooHighException();
 	else
 		this->_grade = grade;
-
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &copy) : _name(copy.getName())
@@ -97,7 +96,6 @@ void				Bureaucrat::signForm(Form &form)
 
 void				Bureaucrat::executeForm(Form const &form)
 {
-	// TODO: if statements die opvangen wat er niet goed gaat
 	if(form.getIsSigned())
 	{
 		try
@@ -110,7 +108,6 @@ void				Bureaucrat::executeForm(Form const &form)
 			std::cout << this->_name << " cannot execute form, because: ";	
 			std::cout << e.what() << std::endl;
 		}
-	
 	}
 	else
 	{

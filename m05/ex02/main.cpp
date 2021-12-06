@@ -228,9 +228,20 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 	
-	/* hieronder evt nog andere tests van de evaluator */
+	// Copy constructor and =-overload
+	std::cout << COLOR_GREEN << "Test: Copy constructors and =-overload" << std::endl;
 	std::cout << COLOR_YELLOW;
 
+	Bureaucrat copy_car(&car);
+	Bureaucrat copy_dem = dem;
+	ShrubberyCreationForm copy_scf(&scf);
+	RobotomyRequestForm copy_rrf = rrf;
+	PresidentialPardonForm copy_ppf(&ppf);
+
+	// Are these forms signed?
+	har->execute(copy_scf);
+	har->execute(copy_rrf);
+	har->execute(copy_ppf);
 
 	std::cout << COLOR_GREEN << "done" << std::endl;
 
