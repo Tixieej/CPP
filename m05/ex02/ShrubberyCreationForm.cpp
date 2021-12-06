@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 16:50:54 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/25 18:29:01 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/06 14:48:24 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include <string>
 #include <iostream>
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : Form()
 {
@@ -45,11 +46,24 @@ ShrubberyCreationForm		&ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 	return (*this);
 }
 
-void				ShrubberyCreationForm::execute(Bureaucrat const & executor) //const hier??
+void				ShrubberyCreationForm::sub_execute() const
 {
-	Form::execute(executor);
-	//TODO: 
-	std::cout << executor.getName() << " TODO " << std::endl;
+	std::ofstream file(_target + "_shrubbery");
+	file << "                                  # #### ####                           %%%%%%%" << std::endl;
+    file << "                            ### \\/#|### |/####                     ,'%%\\\\-*%%%%%" << std::endl;
+    file << "                           ##\\/#/ \\||/##/_/##/_#                ;%%%%* /  _%%%%   .._" << std::endl;
+    file << "                         ###  \\/###|/ \\/ # ###                   ,%%#% # %#(_.*%  %%%." << std::endl;
+    file << "                       ##_\\_#\\_\\## | #/###_/_####              % *%%, ,%%%%*(  '/ #%%" << std::endl;
+    file << "                      ## #### # \\ #| /  #### ##/##               %^   ,*%%% )\\|,%%*%,_" << std::endl;
+    file << "                       __#_--###`  |{,###---###-~                   *%   #\\  / #).-^*%%*" << std::endl;
+    file << "                                 \\ }{                                *% #\\ \\/ / #  *%%*"<< std::endl;
+    file << "                                  }}{                                   _.) ,/ *%," << std::endl;
+    file << "                                  }}{                           _________/)#(_____________" << std::endl;
+    file << "                                  {{}" << std::endl;
+    file << "                            , -=-~{ .-^- _" << std::endl;
+    file << "                                  `}" << std::endl;
+    file << "                                   {" << std::endl;
+	file.close();
 }
 
 const char			*ShrubberyCreationForm::GradeTooHighException::what(void) const throw()

@@ -44,11 +44,9 @@ PresidentialPardonForm			&PresidentialPardonForm::operator=(PresidentialPardonFo
 	return (*this);
 }
 
-void				PresidentialPardonForm::execute(Bureaucrat const & executor) const
+void				PresidentialPardonForm::sub_execute() const
 {
-	//Form::execute(executor);
-	//TODO: wat is target? is dat de naam van de bureaucraat?
-	std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
+	std::cout << this->_target << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }
 
 const char			*PresidentialPardonForm::GradeTooHighException::what(void) const throw()

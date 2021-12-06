@@ -43,16 +43,17 @@ RobotomyRequestForm			&RobotomyRequestForm::operator=(RobotomyRequestForm const 
 	return (*this);
 }
 
-void				RobotomyRequestForm::execute(Bureaucrat const & executor)
+void				RobotomyRequestForm::sub_execute() const
 {
-	Form::execute(executor);
 	std::cout << "* Some drilling noises * ... ";
 	//and tell us that <target> has been robotomized successfully 50% of the time. Otherwise, tell us it’s a failure.
+	//TODO: maak random functie
 	int random = 5;
-	if (random == 0)
+	random = rand() % 10;
+	if (random >= 5)
 		std::cout << "It's a failure" << std::endl;
 	else
-		std::cout << executor.getName() << " has been robotomized successfully." << std::endl;
+		std::cout << _target << " has been robotomized successfully." << std::endl;
 }
 
 const char			*RobotomyRequestForm::GradeTooHighException::what(void) const throw()

@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/01 17:51:43 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/06 15:03:31 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,11 @@ void				Bureaucrat::signForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << this->_name << " signs " << form << "." << std::endl;
+		std::cout << this->_name << " signs form." << std::endl;
 	}
 	catch (std::exception & e)
 	{
-		std::cout << this->_name << " cannot sign " << form << ", because: ";	
+		std::cout << this->_name << " cannot sign form, because: ";	
 		std::cout << e.what() << std::endl;
 	}
 }
@@ -98,11 +98,25 @@ void				Bureaucrat::signForm(Form &form)
 void				Bureaucrat::executeForm(Form const &form)
 {
 	// TODO: if statements die opvangen wat er niet goed gaat
-
-	// Output als het goed gaat
-	std::cout << this->_name << " executes " << form << std::endl;
-	// execute functie van form aanroepen
-	form.execute(*this); // TODO: form is hier altijd parent Form en nooit een van de subclasses.
+	if(form.getIsSigned())
+	{
+		try
+		{
+			form.execute(*this);
+			std::cout << this->_name << " executes form." << std::endl;
+		}
+		catch (std::exception & e)
+		{
+			std::cout << this->_name << " cannot execute form, because: ";	
+			std::cout << e.what() << std::endl;
+		}
+	
+	}
+	else
+	{
+		std::cout << this->_name << " cannot execute form, because: ";
+		throw Form::NotSignedException();
+	}	
 }
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &bC)

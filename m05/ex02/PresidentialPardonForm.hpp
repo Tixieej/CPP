@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/01 17:49:18 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/06 14:46:41 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "Bureaucrat.hpp"
 # include "Form.hpp"
 
-class Bureaucrat;
 //todo: welke functies hier zijn overbodig? de getters?
 class PresidentialPardonForm : public Form
 {
@@ -30,7 +29,7 @@ class PresidentialPardonForm : public Form
 		virtual ~PresidentialPardonForm(void);
 		PresidentialPardonForm		&operator=(PresidentialPardonForm const &);
 		void						beSigned(Bureaucrat const &bC);
-		void						execute(Bureaucrat const & executor) const;
+		void						sub_execute() const;
 		class GradeTooHighException : public std::exception
 		{
 			public:

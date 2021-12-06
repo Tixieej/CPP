@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 16:50:39 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/25 18:28:01 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/06 14:47:13 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <iostream>
 # include "Bureaucrat.hpp"
 # include "Form.hpp"
-
-class Bureaucrat;
 
 class ShrubberyCreationForm : public Form
 {
@@ -30,7 +28,7 @@ class ShrubberyCreationForm : public Form
 		virtual ~ShrubberyCreationForm(void);
 		ShrubberyCreationForm			&operator=(ShrubberyCreationForm const &);
 		void						beSigned(Bureaucrat const &bC);
-		void						execute(Bureaucrat const & executor);
+		void						sub_execute() const;
 		class GradeTooHighException : public std::exception
 		{
 			public:

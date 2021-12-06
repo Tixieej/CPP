@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/01 17:54:14 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/06 14:48:12 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,52 +92,36 @@ void				Form::beSigned(Bureaucrat const &bC)
 	}
 }
 
-// TODO: ?
 void				Form::execute(Bureaucrat const &executor) const
 {
-	std::cout << "we are in the execute function of Form.cpp" << std::endl;
-	if (this->getIsSigned())
+	if (executor.getGrade() < this->_execGrade)
 	{
-		if (executor.getGrade() < this->_execGrade)
-		{
-			// specific execute function
-			//roep subclass aan? heb je die info hier??
-
-		}
-		else
-		{
-			throw GradeTooLowException();
-		}
-
+		// specific execute function
+		this->sub_execute();
 	}
 	else
 	{
-		throw NotSignedException();
+		throw GradeTooLowException();
 	}
 }
 
 const char			*Form::GradeTooHighException::what(void) const throw()
 {
-		return ("Grade Too High");
+	return ("Grade Too High");
 }
 
 const char			*Form::GradeTooLowException::what(void) const throw()
 {
-		return ("Grade Too Low");
+	return ("Grade Too Low");
 }
 
 const char			*Form::NotSignedException::what(void) const throw()
 {
-		return ("Not Signed");
+	return ("Form not Signed");
 }
 
 std::ostream	&operator<<(std::ostream &o, Form const &form)
 {
-	o << "Form " << form.getTarget() << " with grade " << form.getSignGrade() << " is";
-	if (!form.getIsSigned())
-	{
-		o << " not";
-	}
-	o << " signed.";
+	o << "Form " << form.getTarget() << " with grade " << form.getSignGrade();
 	return (o);
 }
