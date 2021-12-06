@@ -26,9 +26,6 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form(target
 
 RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &copy) : Form(copy.getTarget(), copy.getSignGrade(), copy.getExecGrade())
 {
-	// this->_target = copy.getName();
-	// this->_signGrade = copy.getSignGrade();
-	// this->_execGrade = copy.getExecGrade();
 	*this = copy;
 }
 

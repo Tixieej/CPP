@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/06 14:46:41 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/06 19:17:45 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include "Bureaucrat.hpp"
 # include "Form.hpp"
 
-//todo: welke functies hier zijn overbodig? de getters?
 class PresidentialPardonForm : public Form
 {
 	private:

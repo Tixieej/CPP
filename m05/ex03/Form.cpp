@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/06 14:48:12 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/06 19:07:33 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ Form::Form(const std::string target, int signGrade, int execGrade) : _target(tar
 
 }
 
-// TODO: als een signed form gekopieerd wordt, is de kopie dan ook gesigned?
 Form::Form(Form const &copy) : _target(copy.getTarget())
 {
 	this->_signGrade = copy.getSignGrade();
@@ -49,8 +48,6 @@ Form::~Form(void)
 {
 }
 
-// TODO: als een signed form geoverload wordt, is de kopie dan ook gesigned?
-// TODO: target is const, dus die moet niet worden geoverload? of moet target niet const zijn?
 Form			&Form::operator=(Form const &rhs)
 {
 	this->_signGrade = rhs.getSignGrade();
@@ -68,7 +65,6 @@ bool				Form::getIsSigned(void) const
 	return (this->_isSigned);
 }
 
-// TODO: maak aparte getters voor signGrade en execGrade (in Form?)
 int					Form::getSignGrade(void) const
 {
 	return (this->_signGrade);

@@ -24,11 +24,8 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form(
 {
 }
 
-// TODO: hier denk ik niet de copy van Form aanroepen?
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &copy) : Form(copy.getTarget(), copy.getSignGrade(), copy.getExecGrade())
 {
-	// this->_signGrade = copy.getSignGrade();
-	// this->_execGrade = copy.getExecGrade();
 	*this = copy;
 }
 
@@ -36,7 +33,6 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 {
 }
 
-//TODO:
 PresidentialPardonForm			&PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
 {
 	this->_signGrade = rhs.getSignGrade();
@@ -51,12 +47,12 @@ void				PresidentialPardonForm::sub_execute() const
 
 const char			*PresidentialPardonForm::GradeTooHighException::what(void) const throw()
 {
-		return ("Grade Too High");
+	return ("Grade Too High");
 }
 
 const char			*PresidentialPardonForm::GradeTooLowException::what(void) const throw()
 {
-		return ("Grade Too Low");
+	return ("Grade Too Low");
 }
 
 void				PresidentialPardonForm::beSigned(Bureaucrat const &bC)

@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/06 14:51:00 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/06 19:11:41 by rixt          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class Form
 		Form(const std::string target, int signGrade, int execGrade);
 		Form(Form const &);
 		virtual ~Form(void);
-		Form			&operator=(Form const &);
+		Form				&operator=(Form const &);
 		std::string			getTarget() const;
 		bool				getIsSigned() const;
 		int					getSignGrade() const;
