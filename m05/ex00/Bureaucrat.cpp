@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/06/12 17:03:18 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/11/24 16:26:20 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,6 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 Bureaucrat::Bureaucrat(Bureaucrat const &copy) : _name(copy.getName())
 {
 	this->_grade = copy.getGrade();
-}
-
-Bureaucrat::~Bureaucrat(void)
-{
 }
 
 Bureaucrat			&Bureaucrat::operator=(Bureaucrat const &rhs)

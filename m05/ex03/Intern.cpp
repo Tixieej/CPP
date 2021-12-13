@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 20:55:39 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/06 21:30:34 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/13 14:58:20 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Intern::Intern(void)
 
 Intern::Intern(Intern const &copy)
 {
+	*this = copy;
 }
 
 Intern::~Intern(void)
@@ -28,26 +29,49 @@ Intern::~Intern(void)
 
 Intern			&Intern::operator=(Intern const &rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 
-Form		*makeForm(std::string name, std::string target);
+Form		*Intern::makeForm(std::string name, std::string const target)
 {
-	// probeer form in name te maken en pointer te returnen, als het niet lukt, ga de else in.
-	// het mag kennelijk niet gewoon een if elseif else iets zijn, dus ik weet niet wat ik dan moet doen, maar goed.
-	if()
+	std::string possible_requests[] = {"presidential pardon", "robotomy request", "shrubbery creation"};
+	InternFunction formCalls[] = {&Intern::callPPF, &Intern::callRRF, &Intern::callSCF};
+
+	for (int i = 0; i < 3; i++)
 	{
-		std::cout << "Intern creates <form>" << std::endl;
-		return 
+		if (name == possible_requests[i])
+		{
+			Form *requested_form = (this->*formCalls[i])(target);
+			std::cout << "Intern creates " << name << " form." << std::endl;
+			return requested_form;
+		}
 	}
-	else
-	{
-		std::cout << "error message" << std::endl;
-	}	
+	throw FormNotFoundException();
 }
 
-std::ostream	&operator<<(std::ostream &o, Intern const &bC)
+// std::ostream	&operator<<(std::ostream &o)
+// {
+// 	o << "Intern" << std::endl;
+// 	return (o);
+// }
+
+Form	*Intern::callPPF(std::string const &target)
 {
-	o << "Intern" << std::endl;
-	return (o);
+	return new PresidentialPardonForm(target);
+}
+
+Form	*Intern::callRRF(std::string const &target)
+{
+	return new RobotomyRequestForm(target);
+}
+
+Form	*Intern::callSCF(std::string const &target)
+{
+	return new ShrubberyCreationForm(target);
+}
+
+const char			*Intern::FormNotFoundException::what(void) const throw()
+{
+	return ("Form not found");
 }
