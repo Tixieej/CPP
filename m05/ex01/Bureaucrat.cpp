@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/14 07:56:16 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 09:04:35 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,6 @@ void				Bureaucrat::signForm(Form &form)
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &bC)
 {
-	o << bC.getName() << ", bureacrat grade " << bC.getGrade();
+	o << bC.getName() << ", bureaucrat grade " << bC.getGrade();
 	return (o);
 }
