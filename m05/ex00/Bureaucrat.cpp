@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/05 15:30:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/11/24 16:26:20 by rde-vrie      ########   odam.nl         */
+/*   Created: 2021/12/14 09:01:57 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2021/12/14 09:04:34 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,15 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 		throw GradeTooHighException();
 	else
 		this->_grade = grade;
-
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat const &copy) : _name(copy.getName())
 {
 	this->_grade = copy.getGrade();
+}
+
+Bureaucrat::~Bureaucrat(void)
+{
 }
 
 Bureaucrat			&Bureaucrat::operator=(Bureaucrat const &rhs)
@@ -53,12 +56,12 @@ int					Bureaucrat::getGrade(void) const
 
 const char			*Bureaucrat::GradeTooHighException::what(void) const throw()
 {
-		return ("Grade Too High");
+	return ("Grade Too High");
 }
 
 const char			*Bureaucrat::GradeTooLowException::what(void) const throw()
 {
-		return ("Grade Too Low");
+	return ("Grade Too Low");
 }
 
 void				Bureaucrat::increment()
@@ -79,6 +82,6 @@ void				Bureaucrat::decrement()
 
 std::ostream	&operator<<(std::ostream &o, Bureaucrat const &bC)
 {
-	o << bC.getName() << ", bureacrat grade " << bC.getGrade();
+	o << bC.getName() << ", bureaucrat grade " << bC.getGrade();
 	return (o);
 }
