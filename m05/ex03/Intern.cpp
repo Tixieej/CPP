@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 20:55:39 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/13 14:58:20 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 08:47:24 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,6 @@ Form		*Intern::makeForm(std::string name, std::string const target)
 	}
 	throw FormNotFoundException();
 }
-
-// std::ostream	&operator<<(std::ostream &o)
-// {
-// 	o << "Intern" << std::endl;
-// 	return (o);
-// }
 
 Form	*Intern::callPPF(std::string const &target)
 {

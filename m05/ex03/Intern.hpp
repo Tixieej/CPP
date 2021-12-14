@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 20:55:52 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/13 14:22:17 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 08:47:26 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ class Intern
 				virtual const char *what() const throw();
 		};
 };
-	// std::ostream		&operator<<(std::ostream &o);
 
 #endif
