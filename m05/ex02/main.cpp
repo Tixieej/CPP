@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/06 19:13:30 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/14 07:58:06 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,6 @@ int	main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-
 
 	std::cout << COLOR_GREEN << "Test: Bertha can execute shrubbery and sign Robotomy" << std::endl;
 	std::cout << COLOR_ORANGE;

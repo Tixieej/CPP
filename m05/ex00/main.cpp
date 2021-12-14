@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/06/12 17:03:20 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 07:54:14 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,10 +106,6 @@ int	main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-
-
-
-
 
 	// Destructor tests
 	std::cout << COLOR_PINK;

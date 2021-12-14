@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/09/27 14:32:00 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 07:57:02 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ int	main()
 	}
 	
 	// Constructor too low grade tests
-	//std::cout << COLOR_ORANGE;
 	try
 	{
 		Bureaucrat low("bas", 200);
@@ -68,7 +67,6 @@ int	main()
 	{
 		Bureaucrat good("billy", 1);
 		std::cout << good << std::endl;
-
 
 		// Increment tests
 		try
