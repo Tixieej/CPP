@@ -14,12 +14,6 @@
 #include <string>
 #include <iostream>
 
-PresidentialPardonForm::PresidentialPardonForm(void)
-{
-	this->_signGrade = 25;
-	this->_execGrade = 5;
-}
-
 PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form(target, 25, 5)
 {
 }
@@ -35,8 +29,7 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 
 PresidentialPardonForm			&PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
 {
-	this->_signGrade = rhs.getSignGrade();
-	this->_execGrade = rhs.getExecGrade();
+	(void)rhs;
 	return (*this);
 }
 
@@ -53,18 +46,6 @@ const char			*PresidentialPardonForm::GradeTooHighException::what(void) const th
 const char			*PresidentialPardonForm::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade Too Low");
-}
-
-void				PresidentialPardonForm::beSigned(Bureaucrat const &bC)
-{
-	if (bC.getGrade() < this->_signGrade)
-	{
-		this->_isSigned = true;
-	}
-	else
-	{
-		throw GradeTooLowException();
-	}
 }
 
 std::ostream	&operator<<(std::ostream &o, PresidentialPardonForm const &form)

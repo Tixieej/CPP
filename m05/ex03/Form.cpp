@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/06 19:07:33 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/14 15:08:15 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,22 @@
 #include <string>
 #include <iostream>
 
-Form::Form(void)
-{
-	this->_isSigned = false;
-}
-
-Form::Form(const std::string target, int signGrade, int execGrade) : _target(target)
+Form::Form(const std::string target, int const signGrade, int const execGrade) : _target(target), _signGrade(signGrade), _execGrade(execGrade)
 {
 	this->_isSigned = false;
 	if (signGrade > 150)
 		throw GradeTooLowException();
-	else if (signGrade < 0)
+	else if (signGrade < 1)
 		throw GradeTooHighException();
-	else
-		this->_signGrade = signGrade;
 
 	if (execGrade > 150)
 		throw GradeTooLowException();
-	else if (execGrade < 0)
+	else if (execGrade < 1)
 		throw GradeTooHighException();
-	else
-		this->_execGrade = execGrade;
-
 }
 
-Form::Form(Form const &copy) : _target(copy.getTarget())
+Form::Form(Form const &copy) : _target(copy.getTarget()), _signGrade(copy.getSignGrade()), _execGrade(copy.getExecGrade())
 {
-	this->_signGrade = copy.getSignGrade();
-	this->_execGrade = copy.getExecGrade();
 }
 
 Form::~Form(void)
@@ -50,8 +38,7 @@ Form::~Form(void)
 
 Form			&Form::operator=(Form const &rhs)
 {
-	this->_signGrade = rhs.getSignGrade();
-	this->_execGrade = rhs.getExecGrade();
+	(void)rhs;
 	return (*this);
 }
 
@@ -77,7 +64,7 @@ int					Form::getExecGrade(void) const
 
 void				Form::beSigned(Bureaucrat const &bC)
 {
-	if (bC.getGrade() < this->_signGrade)
+	if (bC.getGrade() <= this->_signGrade)
 	{
 		this->_isSigned = true;
 	}
@@ -89,7 +76,7 @@ void				Form::beSigned(Bureaucrat const &bC)
 
 void				Form::execute(Bureaucrat const &executor) const
 {
-	if (executor.getGrade() < this->_execGrade)
+	if (executor.getGrade() <= this->_execGrade)
 	{
 		this->sub_execute();
 	}

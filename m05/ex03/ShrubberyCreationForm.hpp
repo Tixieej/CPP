@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/09/27 16:50:39 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/06 14:47:13 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 14:54:25 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class ShrubberyCreationForm : public Form
 		ShrubberyCreationForm(ShrubberyCreationForm const &);
 		virtual ~ShrubberyCreationForm(void);
 		ShrubberyCreationForm			&operator=(ShrubberyCreationForm const &);
-		void						beSigned(Bureaucrat const &bC);
 		void						sub_execute() const;
 		class GradeTooHighException : public std::exception
 		{

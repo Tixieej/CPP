@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/13 15:06:27 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 15:18:31 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,13 @@ int	main()
 	dem.executeForm(*ppf);
 	dem.signForm(*rrf);
 	dem.executeForm(*rrf);
+
+	std::cout << COLOR_GREEN << "Test: getters" << std::endl;
+	std::cout << COLOR_PURPLE;
+
+	std::cout << "Shrubbery signgrade: " << scf->getSignGrade() << std::endl;
+	std::cout << "Presidential isSigned: " << ppf->getIsSigned() << std::endl;
+	std::cout << "Robotomy executegrade: " << rrf->getExecGrade() << std::endl;
 
 	std::cout << COLOR_GREEN << "done" << std::endl;
 	std::cout << COLOR_RESET;

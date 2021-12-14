@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/14 09:06:31 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 13:38:45 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main()
 	std::cout << COLOR_YELLOW;
 	try
 	{
-		Bureaucrat good("billy", 1);
+		Bureaucrat good("billy", 2);
 		std::cout << good << std::endl;
 
 		// Increment tests
@@ -106,9 +106,6 @@ int	main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-
-	// Destructor tests
-	std::cout << COLOR_PINK;
 	std::cout << COLOR_RESET;
 	return 0;
 }

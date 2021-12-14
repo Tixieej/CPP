@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 20:55:39 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/14 08:47:24 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 15:10:22 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Intern			&Intern::operator=(Intern const &rhs)
 	return (*this);
 }
 
-Form		*Intern::makeForm(std::string name, std::string const target)
+Form		*Intern::makeForm(std::string const name, std::string const target)
 {
 	std::string possible_requests[] = {"presidential pardon", "robotomy request", "shrubbery creation"};
 	InternFunction formCalls[] = {&Intern::callPPF, &Intern::callRRF, &Intern::callSCF};

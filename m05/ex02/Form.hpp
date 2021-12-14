@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/06 19:11:41 by rixt          ########   odam.nl         */
+/*   Updated: 2021/12/14 15:03:08 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@ class Bureaucrat;
 
 class Form
 {
-	protected:
+	private:
 		Form(void);
+
+	protected:
 		std::string	const	_target;
 		bool				_isSigned;
-		int					_signGrade;
-		int					_execGrade;
+		int const			_signGrade;
+		int const			_execGrade;
 
 	public:
-		Form(const std::string target, int signGrade, int execGrade);
+		Form(std::string const target, int const signGrade, int const execGrade);
 		Form(Form const &);
 		virtual ~Form(void);
 		Form				&operator=(Form const &);

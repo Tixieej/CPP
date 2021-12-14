@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:34 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/12/06 15:03:31 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 14:25:25 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 #include <string>
 #include <iostream>
 
-Bureaucrat::Bureaucrat(void)
-{
-}
-
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
 	if (grade > 150)
 		throw GradeTooLowException();
-	else if (grade < 0)
+	else if (grade < 1)
 		throw GradeTooHighException();
 	else
 		this->_grade = grade;
@@ -66,7 +62,7 @@ const char			*Bureaucrat::GradeTooLowException::what(void) const throw()
 
 void				Bureaucrat::increment()
 {
-	if (this->_grade < 1)
+	if (this->_grade <= 1)
 		throw GradeTooHighException();
 	else
 		(this->_grade)--;
@@ -74,7 +70,7 @@ void				Bureaucrat::increment()
 
 void				Bureaucrat::decrement()
 {
-	if (this->_grade > 149)
+	if (this->_grade >= 150)
 		throw GradeTooLowException();
 	else
 		(this->_grade)++;

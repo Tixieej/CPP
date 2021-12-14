@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   PresidentialPardonForm.cpp                                           :+:    :+:            */
+/*   PresidentialPardonForm.cpp                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 14:53:09 by rde-vrie      ########   odam.nl         */
+/*   Created: 2021/12/14 14:30:15 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2021/12/14 14:43:08 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 #include <string>
 #include <iostream>
-
-PresidentialPardonForm::PresidentialPardonForm(void)
-{
-	this->_signGrade = 25;
-	this->_execGrade = 5;
-}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form(target, 25, 5)
 {
@@ -35,8 +29,7 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 
 PresidentialPardonForm			&PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
 {
-	this->_signGrade = rhs.getSignGrade();
-	this->_execGrade = rhs.getExecGrade();
+	(void)rhs;
 	return (*this);
 }
 
@@ -53,18 +46,6 @@ const char			*PresidentialPardonForm::GradeTooHighException::what(void) const th
 const char			*PresidentialPardonForm::GradeTooLowException::what(void) const throw()
 {
 	return ("Grade Too Low");
-}
-
-void				PresidentialPardonForm::beSigned(Bureaucrat const &bC)
-{
-	if (bC.getGrade() < this->_signGrade)
-	{
-		this->_isSigned = true;
-	}
-	else
-	{
-		throw GradeTooLowException();
-	}
 }
 
 std::ostream	&operator<<(std::ostream &o, PresidentialPardonForm const &form)

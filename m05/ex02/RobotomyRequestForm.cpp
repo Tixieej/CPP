@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   RobotomyRequestForm.cpp                                           :+:    :+:            */
+/*   RobotomyRequestForm.cpp                            :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 14:49:18 by rde-vrie      ########   odam.nl         */
+/*   Created: 2021/12/14 14:30:52 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2021/12/14 14:43:16 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 #include <string>
 #include <iostream>
-
-RobotomyRequestForm::RobotomyRequestForm(void)
-{
-	this->_signGrade = 72;
-	this->_execGrade = 45;
-}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form(target, 72, 45)
 {
@@ -35,18 +29,14 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm			&RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
 {
-	this->_signGrade = rhs.getSignGrade();
-	this->_execGrade = rhs.getExecGrade();
+	(void)rhs;
 	return (*this);
 }
 
 void				RobotomyRequestForm::sub_execute() const
 {
 	std::cout << "* Some drilling noises * ... ";
-	//and tell us that <target> has been robotomized successfully 50% of the time. Otherwise, tell us it’s a failure.
-	//TODO: maak random functie
-	int random = 5;
-	random = rand() % 10;
+	int random = rand() % 10;
 	if (random >= 5)
 		std::cout << "It's a failure" << std::endl;
 	else
@@ -55,24 +45,12 @@ void				RobotomyRequestForm::sub_execute() const
 
 const char			*RobotomyRequestForm::GradeTooHighException::what(void) const throw()
 {
-		return ("Grade Too High");
+	return ("Grade Too High");
 }
 
 const char			*RobotomyRequestForm::GradeTooLowException::what(void) const throw()
 {
-		return ("Grade Too Low");
-}
-
-void				RobotomyRequestForm::beSigned(Bureaucrat const &bC)
-{
-	if (bC.getGrade() < this->_signGrade)
-	{
-		this->_isSigned = true;
-	}
-	else
-	{
-		throw GradeTooLowException();
-	}
+	return ("Grade Too Low");
 }
 
 std::ostream	&operator<<(std::ostream &o, RobotomyRequestForm const &form)

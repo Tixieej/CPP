@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:11:09 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 13:29:49 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 12:58:05 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ class Form
 		Form(void);
 		std::string	const	_name;
 		bool				_isSigned;
-		int					_reqGrade;
+		int const			_reqGrade;
 
 	public:
-		Form(const std::string name, int reqGrade);
+		Form(const std::string name, const int reqGrade);
 		Form(Form const &);
 		virtual ~Form(void);
 		Form			&operator=(Form const &);

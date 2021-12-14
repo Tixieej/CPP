@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/12/06 20:55:52 by rixt          #+#    #+#                 */
-/*   Updated: 2021/12/14 08:47:26 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 15:10:02 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Intern
 		Intern(Intern const &);
 		virtual ~Intern(void);
 		Intern		&operator=(Intern const &);
-		Form		*makeForm(std::string name, std::string const target);
+		Form		*makeForm(std::string const name, std::string const target);
 
 		class FormNotFoundException : public std::exception
 		{

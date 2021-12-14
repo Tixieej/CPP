@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/12 17:10:35 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2021/09/27 14:16:07 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2021/12/14 13:23:02 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,17 @@
 #include <string>
 #include <iostream>
 
-Form::Form(void)
-{
-	this->_isSigned = false;
-
-}
-
-Form::Form(const std::string name, int grade) : _name(name)
+Form::Form(std::string const name, int const grade) : _name(name), _reqGrade(grade)
 {
 	this->_isSigned = false;
 	if (grade > 150)
 		throw GradeTooLowException();
-	else if (grade < 0)
+	else if (grade < 1)
 		throw GradeTooHighException();
-	else
-		this->_reqGrade = grade;
-
 }
 
-Form::Form(Form const &copy) : _name(copy.getName())
+Form::Form(Form const &copy) : _name(copy.getName()), _reqGrade(copy.getGrade())
 {
-	this->_reqGrade = copy.getGrade();
 }
 
 Form::~Form(void)
@@ -43,7 +33,7 @@ Form::~Form(void)
 
 Form			&Form::operator=(Form const &rhs)
 {
-	this->_reqGrade = rhs.getGrade();
+	(void)rhs;
 	return (*this);
 }
 
@@ -74,7 +64,7 @@ const char			*Form::GradeTooLowException::what(void) const throw()
 
 void				Form::beSigned(Bureaucrat const &bC)
 {
-	if (bC.getGrade() < this->_reqGrade)
+	if (bC.getGrade() <= this->_reqGrade)
 	{
 		this->_isSigned = true;
 	}

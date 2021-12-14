@@ -14,12 +14,6 @@
 #include <string>
 #include <iostream>
 
-RobotomyRequestForm::RobotomyRequestForm(void)
-{
-	this->_signGrade = 72;
-	this->_execGrade = 45;
-}
-
 RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form(target, 72, 45)
 {
 }
@@ -35,18 +29,14 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm			&RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
 {
-	this->_signGrade = rhs.getSignGrade();
-	this->_execGrade = rhs.getExecGrade();
+	(void)rhs;
 	return (*this);
 }
 
 void				RobotomyRequestForm::sub_execute() const
 {
 	std::cout << "* Some drilling noises * ... ";
-	//and tell us that <target> has been robotomized successfully 50% of the time. Otherwise, tell us it’s a failure.
-	//TODO: maak random functie
-	int random = 5;
-	random = rand() % 10;
+	int random = rand() % 10;
 	if (random >= 5)
 		std::cout << "It's a failure" << std::endl;
 	else
@@ -61,18 +51,6 @@ const char			*RobotomyRequestForm::GradeTooHighException::what(void) const throw
 const char			*RobotomyRequestForm::GradeTooLowException::what(void) const throw()
 {
 		return ("Grade Too Low");
-}
-
-void				RobotomyRequestForm::beSigned(Bureaucrat const &bC)
-{
-	if (bC.getGrade() < this->_signGrade)
-	{
-		this->_isSigned = true;
-	}
-	else
-	{
-		throw GradeTooLowException();
-	}
 }
 
 std::ostream	&operator<<(std::ostream &o, RobotomyRequestForm const &form)
