@@ -5,8 +5,8 @@
 /*                                                     +:+                    */
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2021/12/14 09:01:57 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2022/03/02 13:29:11 by rde-vrie      ########   odam.nl         */
+/*   Created: 2022/03/02 14:01:18 by rde-vrie      #+#    #+#                 */
+/*   Updated: 2022/03/02 14:05:54 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@
 
 Converter::Converter()
 {
-	std::cout << "converter initialized" << std::endl;
 }
 
 Converter::Converter(Converter const &copy)
 {
-	(void)copy;
+	*this = copy;
 }
 
-Converter::~Converter(void)
+Converter::~Converter()
 {
 }
 
@@ -109,16 +108,17 @@ bool				Converter::isConvertable(std::string s)
 	// return false if:
 	// 
 
-
+	(void)s;
 	return true;
 }
 
 
 
 
-std::ostream	&operator<<(std::ostream &o, Converter const &bC)
+std::ostream	&operator<<(std::ostream &o, Converter const &conv)
 {
-	(void)bC;
+	(void)conv;
 	o << "output operator." << std::endl;
 	return (o);
 }
+

@@ -6,7 +6,7 @@
 /*   By: rde-vrie <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2021/06/05 15:30:25 by rde-vrie      #+#    #+#                 */
-/*   Updated: 2022/03/02 13:32:04 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2022/03/02 14:05:19 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,10 @@
 
 class Converter
 {
-	private:
-
-
 	public:
-		Converter(void);
+		Converter();
 		Converter(Converter const &);
-		virtual ~Converter(void);
+		virtual ~Converter();
 		Converter			&operator=(Converter const &);
 		void				stoc(std::string s);
 		void				stoi(std::string s);
@@ -31,6 +28,6 @@ class Converter
 		void				stod(std::string s);
 		bool				isConvertable(std::string s);
 };
-	std::ostream		&operator<<(std::ostream &o, Converter const &bC);
+	std::ostream		&operator<<(std::ostream &o, Converter const &conv);
 
 #endif

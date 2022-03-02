@@ -6,7 +6,7 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2022/03/02 09:52:02 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2022/03/02 14:07:25 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,3 @@ int	main(int argc, char *argv[])
 	}
 	return 0;
 }
-
