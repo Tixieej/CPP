@@ -6,17 +6,27 @@
 /*   By: rixt <marvin@codam.nl>                       +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 12:21:00 by rixt          #+#    #+#                 */
-/*   Updated: 2022/02/02 15:11:01 by rde-vrie      ########   odam.nl         */
+/*   Updated: 2022/03/02 09:52:02 by rde-vrie      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "Bureaucrat.hpp"
+#include "Converter.hpp"
 #include "colors.hpp"
 #include <iostream>
 #include <sstream>
+#include <string>
 
 int	main(int argc, char *argv[])
 {
+	// geef input door aan 4 functies
+	// stoc (string to char)
+	// stoi (string to int)
+	// stof (string to float)
+	// stod (string to double)
+
+	// they output the right line (and return nothing, i think)
+
+
 	if (argc != 2)
 	{
 		std::cout << "please give an argument with your program, for example:" << std::endl;
@@ -26,23 +36,21 @@ int	main(int argc, char *argv[])
 	{
 		std::cout << COLOR_PINK;
 
-		stringstream degree(argv[1]);
+		std::stringstream degree(argv[1]);
 		int x = 0;
     	degree >> x;
-    	cout << "Value of x: " << x;
+    	std::cout << "Value of x: " << x << std::endl;
 
 	//////////////////////
 
-		char *c = (char *) argv[1];
-		int *n = (int *) argv[1];
-		float *f = (float *) argv[1];
-		double *d = (double *) argv[1];
+		std::cout << COLOR_GREEN;
+		Converter conv;
+		conv.stoc(argv[1]);
+		conv.stoi(argv[1]);
+		conv.stof(argv[1]);
+		conv.stod(argv[1]);
 
-		// dit hieronder moet wsl naar de classes verplaatst worden?
-		std::cout << "char: " << *c << std::endl;
-		std::cout << "int: " << *n << std::endl;
-		std::cout << "float: " << *f << std::endl;
-		std::cout << "double: " << *d << std::endl;
 	}
 	return 0;
 }
+

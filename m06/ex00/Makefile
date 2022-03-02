@@ -6,15 +6,15 @@
 #    By: rde-vrie <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2020/08/31 10:56:55 by rde-vrie      #+#    #+#                  #
-#    Updated: 2022/02/02 13:48:01 by rde-vrie      ########   odam.nl          #
+#    Updated: 2022/03/02 09:02:23 by rde-vrie      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = convert
-OBJ = main.o #Converter.o
+OBJ = main.o Converter.o
 CC = clang++
 FLAGS = -Wall -Werror -Wextra -std=c++98
-INC = colors.hpp #Converter.hpp
+INC = colors.hpp Converter.hpp
 .PHONY: all clean fclean re test
 
 all: $(NAME)
